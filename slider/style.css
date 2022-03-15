@@ -1,0 +1,92 @@
+body{
+    background-image: linear-gradient(to left, rgb(118, 216, 118), rgb(143, 194, 143), rgb(116, 226, 116), rgb(147, 185, 147));
+    background-attachment: fixed;
+    color: black;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+h1, h2, p, #config{
+    text-align: center;
+}
+#dvslider{
+    max-width: 800px;
+    height: 300px;
+    background-position: center center;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#trocaSlider{
+    margin: auto;
+    margin-top: 10px;
+    display: flex;      
+    max-width: 800px;
+}
+.btnSlider{
+    width: 50px;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    outline: none;
+    background-color: rgb(84, 205, 84);
+    cursor: pointer;
+}
+#dvLoad{
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    width: 100%;
+}
+#dvBarra{
+    width: 0%;
+    height: 100%;
+    background-color: rgb(84, 175, 84);
+}     
+
+.btnMuda{
+    font-size: 16px;
+    padding: 4px;
+    background-color: rgb(84, 205, 84);            
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+}
+.btnMuda:hover, .btnSlider:hover{
+    background-color: rgb(104, 225, 104);
+}
+
+#txtTempo{
+    padding: 4px;
+    text-align: right;
+    font-size: 16px;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    outline: none;
+    width: 50px;
+}
+
+#config{
+    font-size: 20px;
+}
+
+#btnSliderAntes{
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+}
+#btnSliderDepois{
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+#sliderPos{
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+}
+.sliderPosicoes{
+    background-color: rgb(84, 175, 84);
+    height: 15px;
+    width: 15px;
+    border-radius: 100%;
+    margin-left: 10px;
+    cursor: pointer;
+}

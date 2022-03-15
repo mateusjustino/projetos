@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slider</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    
+</head>
+<body>
+    <h1>Slider</h1>
+    <div id="dvslider"></div>
+
+    <div id="sliderPos">
+        <div class="sliderPosicoes" id="pos0" onclick="troca(+1, 0)"></div>
+        <div class="sliderPosicoes" id="pos1" onclick="troca(+1, 1)"></div>
+        <div class="sliderPosicoes" id="pos2" onclick="troca(+1, 2)"></div>
+        <div class="sliderPosicoes" id="pos3" onclick="troca(+1, 3)"></div>
+        <div class="sliderPosicoes" id="pos4" onclick="troca(+1, 4)"></div>
+    </div>
+
+    <div id="trocaSlider">
+        <button class="btnSlider" onclick="troca(-1)" id="btnSliderAntes"><</button>
+        <div id="dvLoad">
+            <div id="dvBarra"></div>
+        </div>
+        <button class="btnSlider" onclick="troca(+1)" id="btnSliderDepois">></button>
+    </div>
+
+    <h2>Mudar o tempo</h2>
+    <div id="config">
+        <label for="txtTempo">Tempo de transição (s): </label>
+        <input type="number" name="txtTempo" id="txtTempo" min="1" value="2">
+        <button onclick="mudaTempo()" class="btnMuda">Confirmar</button>
+        <p id="tempoAtual">Tempo de Transição atual (s): </p>
+    </div>
+
+</body>
+</html>

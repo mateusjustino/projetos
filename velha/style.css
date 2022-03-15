@@ -1,0 +1,73 @@
+*{
+    font-family: 'Courier New', Courier, monospace;
+}
+body{
+    background-image: linear-gradient(to bottom, rgb(216, 151, 216), rgb(182, 129, 182));
+    background-attachment: fixed;
+    text-align: center;
+    margin: auto;
+}
+
+#jogo{
+    width: 295px;
+    height: 295px;
+    margin: auto;
+}
+#coluna1{
+    background-color: black;
+    height: 5px;
+    width: 50px;
+    border-radius: 5px;
+}
+#coluna2{
+    background-color: black;
+    height: 5px;
+    width: 50px;
+    border-radius: 5px;
+}
+#linha1{
+    background-color: black;
+    height: 5px;
+    width: 50px;
+    border-radius: 5px;
+}
+#linha2{
+    background-color: black;
+    height: 5px;
+    width: 50px;
+    border-radius: 5px;
+}
+
+.bloco{
+    background-color: rgba(128, 0, 128, 0.2);
+    transition: all 1s;
+    height: 95px;
+    width: 95px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+h2, h3{
+    font-size: 0.1px;
+}
+
+button{
+    font-size: 1em;
+    padding: 6px;
+    width: 180px;
+    margin-bottom: 40px;
+    outline: none;
+    border: 1px dashed black;
+    background-color: transparent;
+    cursor: pointer;
+    border-radius: 5px;
+    letter-spacing: 5px;
+    transition: all 1s;
+}
+button:hover{
+    background-color: rgba(128, 0, 128, 0.1);
+}
