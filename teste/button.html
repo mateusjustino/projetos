@@ -11,6 +11,7 @@
             padding: 0;
             box-sizing: border-box;
             border-radius: 10px;
+            
         }
         body{
             background: whitesmoke;
@@ -32,15 +33,17 @@
             color: black;
         }
         #teste1{
-            background: linear-gradient(45deg, rgb(105, 131, 226), rgb(102, 102, 151));
+            background: linear-gradient(45deg, rgb(166, 184, 253), rgb(185, 66, 221));
 
         }
+        /*------------------------------------------------------------*/
         #teste2 {
             border: solid 5px transparent;
             background-image: linear-gradient(whitesmoke, whitesmoke), linear-gradient(to right, rgb(165, 55, 21), rgb(250, 149, 16));
             background-origin: border-box;
             background-clip: content-box, border-box;
         }
+        /*------------------------------------------------------------*/
         #teste3{
             background-color: rgb(230, 71, 71);
             box-shadow: 1px 1px 5px rgba(230, 71, 71, 0.486);
@@ -51,6 +54,7 @@
             transform: translateY(-5px);
             box-shadow: 1px 6px 5px rgba(78, 228, 78, 0.586);
         }
+        /*------------------------------------------------------------*/
         #teste4{
             background: linear-gradient(130deg, #ba76f1, violet);
             background-size: 300% 300%;
@@ -61,7 +65,7 @@
         #teste4:hover{
             box-shadow: 1px 1px 20px rgb(189, 127, 127);;
         }
-        
+        /*------------------------------------------------------------*/
         #teste5{
             background: linear-gradient(90deg, rgb(255, 210, 127), rgb(196, 186, 83), rgb(189, 189, 7), rgb(236, 167, 39), rgb(216, 185, 190));
             background-size: 300% 300%;
@@ -83,6 +87,7 @@
                 background-position: 0 50%;
             }
         }
+        /*------------------------------------------------------------*/
         #teste6{
             background: rgb(154, 154, 248);
             padding-left: 16px;
@@ -99,6 +104,7 @@
         #teste6:hover span{
             opacity: 1;
         }
+        /*------------------------------------------------------------*/
         #teste7{
             position: relative;
             z-index: 1;
@@ -124,6 +130,7 @@
         #teste7:hover::before{
             width: 100%;
         }
+        /*------------------------------------------------------------*/
         #teste8{
             position: relative;
             z-index: 1;
@@ -148,26 +155,139 @@
             width: 100%;
             transform: translate3d(100%, 0, 0);
         }
-        #teste9{            
+        /*------------------------------------------------------------*/
+        #teste9{     
+            width: 100px;
+            height: 40px;
+            margin: 10px;
+            outline: none;
+            border: none;
+            text-transform: uppercase;
+            cursor: pointer;
+            font-size: 10px;
+
             background-color: rgb(0, 155, 207);
             color: white;
+            position: relative;
+            padding: 10px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+        }        
+        #teste9 span:nth-child(1){
+            background-color: white;
+            border-radius: 100%;
+            
+            width: 32px;
+            height: 32px;
+            position: absolute;
+            left: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            transition: 0.3s linear;
+            z-index: 1;
+        }
+        #teste9 span:nth-child(2){
+            position: absolute;
+            right: 5px;
+            z-index: 0;
+        }
+        #teste9 span img{            
+            width: 25px;
+            height: 25px;
+            transition: 0.3s linear;
+        }
+        
+        #teste9:hover span:nth-child(1){
+            border-radius: 5px;
+            width: 90%;
+        }
+        #teste9:hover span img{
+            transform: rotateZ(360deg);
+        }
+        /*------------------------------------------------------------*/
+        #teste10{
+            background-color: aquamarine;
+            width: 100px;
+            height: 40px;
+            margin: 10px;
+            outline: none;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            box-shadow: 1px 1px 10px rgb(78, 158, 131);
+            overflow: hidden;
+            position: relative;
+        }     
+        :root{
+            --transition: 0.2s linear;
+        }
+        #teste10  span{            
+            position: absolute;
+            top: 10px;
+        }
+        #teste10:hover span{
+            top: 20px;
+        }
+
+        #teste10 > p{
             display: flex;
             flex-direction: row;
             align-items: center;
-            justify-content: center;
-            font-size: 10px;
+            justify-content: space-evenly;
         }
-        #teste9 img{
+        #teste10 > p:nth-child(1) > span:nth-child(1){
+            margin-right: -14px;
+        }
+        
+        #teste10 > p:nth-child(1) > span:nth-child(1), #teste10 > p:nth-child(1) > span:nth-child(2){
             position: relative;
-            margin-right: 5px;
-            width: 30px;
-            height: 30px;
-            border: 3px solid white;
-            border-radius: 100%;
-            transition: 0.5s linear;
+            top: 7px;
+
+            transition: var(--transition);
         }
-        #teste9 img:hover{
-            width: 100%;
+        #teste10 > p:nth-child(2) > span:nth-child(1), #teste10 > p:nth-child(2) > span:nth-child(2), #teste10 > p:nth-child(2) > span:nth-child(3){
+            position: relative;
+            top: 20px;
+
+            transition: var(--transition);
+        }
+        
+        #teste10:hover > p:nth-child(1) > span:nth-child(1), #teste10:hover > p:nth-child(1) > span:nth-child(2){
+            top: -28px;
+        }
+        #teste10:hover > p:nth-child(2) > span:nth-child(1), #teste10:hover > p:nth-child(2) > span:nth-child(2), #teste10:hover > p:nth-child(2) > span:nth-child(3){
+            top: -14px;
+        }
+        #teste10:hover > p:nth-child(2) > span:nth-child(1){
+            transition-delay: 0.15s;
+        }
+        #teste10:hover > p:nth-child(2) > span:nth-child(2){
+            transition-delay: 0.25s;
+        }
+        #teste10:hover > p:nth-child(2) > span:nth-child(3){
+            transition-delay: 0.35s;
+        }
+
+        #teste10 > p:nth-child(2) > span:nth-child(1):hover{
+            filter: drop-shadow(1px 1px 20px black) opacity(50%);
+        }
+        #teste10 > p:nth-child(2) > span:nth-child(2):hover{
+            filter: drop-shadow(1px 1px 20px black) opacity(50%);
+        }
+        #teste10 > p:nth-child(2) > span:nth-child(3):hover{
+            filter: drop-shadow(1px 1px 20px black) opacity(50%);
+        }
+
+
+        #teste10 img{
+            width: 20px;
+            height: 20px;
+            border-radius: 0px;
         }
 
         
@@ -182,8 +302,37 @@
     <button id="teste6" class="btn">Button<span>»</span></button>
     <button id="teste7" class="btn">Button</button>
     <button id="teste8" class="btn">Button</button>
-    <button id="teste9" class="btn"><img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Telegram_Messenger.png" alt="">Button</button><!--https://cssbuttons.io/detail/fanishah/tame-goose-53-->
+
+    <div id="teste9">
+        <span>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Telegram_Messenger.png/600px-Telegram_Messenger.png?20140820175819" alt="telegram">
+        </span>
+        <span>Telegram</span>
+    </div>
+
+    <div id="teste10">
+        <p>
+            <span>Share</span>
+            <span><img src="https://cdn.iconscout.com/icon/free/png-256/share-3602944-3005151.png"></span>
+        </p>
+
+        <p>
+            <span><a href="#"><img src="https://cdn.icon-icons.com/icons2/2368/PNG/512/facebook_logo_icon_143786.png"></a></span>
+            <span><a href="#"><img src="https://cdn.icon-icons.com/icons2/2248/PNG/512/instagram_icon_138461.png"></a></span>
+            <span><a href="#"><img src="https://cdn-icons-png.flaticon.com/512/154/154858.png"></a></span>
+        </p>
+        
+        
+        
+    </div>
+    
+    
+    
+    
+    <!--https://cssbuttons.io/detail/fanishah/tame-goose-53-->
     <!--https://cssbuttons.io/detail/SharpTH/swift-bullfrog-75-->
+
+    
 
 </body>
 </html>
