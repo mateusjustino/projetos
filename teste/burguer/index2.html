@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Burguer</title>
+    <style>
+
+        :root{
+            --tempo: 0.3s
+        }
+        
+        body{
+            background: radial-gradient(circle, rgb(193, 250, 231), rgb(232, 232, 240));
+            height: 100%;
+            width: 100%;
+
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 20px;
+        }        
+        #burguer{
+            width: 50px;
+            height: 50px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: var(--tempo) ease;
+        }
+        .bar{
+            width: 50px;
+            height: 8px;
+            background-color: red;
+            border-radius: 5px;
+            position: relative;
+            transition: var(--tempo) ease;
+        }
+        #bar1{
+            transform: translateY(-5px);
+        }
+        #bar3{
+            transform: translateY(5px);
+        }
+
+        #menu{
+            position: absolute;
+            top: 50px;
+            left: -130px;
+            opacity: 0;
+            transition: var(--tempo) ease;
+        }
+        a{
+            text-decoration: none;
+        }
+        li{
+            list-style: none;
+            margin-bottom: 15px;
+        }
+        
+
+    </style>
+</head>
+<body>
+    <div id="burguer">
+        <span id="bar1" class="bar"></span>
+        <span id="bar2" class="bar"></span>
+        <span id="bar3" class="bar"></span>
+    </div>
+
+    <nav id="menu">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Sobre</a></li>
+            <li><a href="#">Galeira</a></li>
+            <li><a href="#">Contato</a></li>
+        </ul>
+    </nav>
+
+    <script>
+        var menu = document.getElementById('menu')
+        var menuAberto = false
+        var burguer = document.getElementById('burguer')
+        burguer.addEventListener('click', function () {
+            var bar1 = document.getElementById('bar1')
+            var bar2 = document.getElementById('bar2')
+            var bar3 = document.getElementById('bar3')
+            var bar = document.getElementsByClassName('bar')[0]
+
+            if (menuAberto == false) {
+                bar1.style.transform = 'rotate(45deg)'
+                bar1.style.top = '8px'
+
+                bar3.style.transform = 'rotate(-45deg)'
+                bar3.style.top = '-8px'
+
+                bar2.style.opacity = '0'
+
+
+                menuAberto = true
+                abreMenu()
+            }
+            else{
+                bar1.style.transform = 'rotate(0deg)'
+                bar1.style.top = '0px'
+                bar1.style.transform = 'translateY(-5px)'
+
+                bar3.style.transform = 'rotate(0deg)'
+                bar3.style.top = '0px'
+                bar3.style.transform = 'translateY(5px)'
+
+                bar2.style.opacity = '100'
+
+                menuAberto = false
+                fechaMenu()
+            }
+        })
+
+        function abreMenu() {
+            menu.style.left = '-30px'
+            menu.style.opacity = '100'
+        }
+        function fechaMenu() {
+            menu.style.left = '-130px'
+            menu.style.opacity = '0'
+
+        }
+
+    </script>
+</body>
+</html>

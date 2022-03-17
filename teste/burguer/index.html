@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Burguer</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body{
+            background-color: rgb(37, 35, 35);
+            height: 100%;
+        }
+
+        #container{
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #checkboxMenu{
+            position: absolute;
+            opacity: 0;
+        }
+
+        label{
+            cursor: pointer;
+            position: relative;
+            display: block;
+            height: 22px;
+            width: 200px;
+        }
+
+        label span{
+            position: absolute;
+            display: block;
+            height: 10px;
+            width: 100%;
+            border-radius: 30px;
+            background-color: orange;
+            transition: 0.25s ease-in-out;
+        }
+
+        label span:nth-child(1){
+            top: 0px;
+        }
+        label span:nth-child(2){
+            top: 16px;
+        }
+        label span:nth-child(3){
+            top: 32px;
+        }
+
+        #checkboxMenu:checked + label span:nth-child(1){
+            transform: rotate(-45deg);
+            top: 8px;
+        }
+        #checkboxMenu:checked + label span:nth-child(2){
+            opacity: 0;
+        }
+        #checkboxMenu:checked + label span:nth-child(3){
+            transform: rotate(45deg);
+            top: 8px;
+        }
+
+        /* https://youtu.be/pO73IamOa0c */
+    </style>
+</head>
+<body>
+    <div id="container">
+        <input type="checkbox" id="checkboxMenu">
+        <label for="checkboxMenu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+    </div>
+</body>
+</html>
