@@ -1,9 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Peta&display=swap');
 body{
-    background: rgb(216, 216, 216);
-    display: grid;
-    place-items: center;
+    background: rgb(150, 150, 150);
     height: 100vh;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'Lexend Peta', sans-serif;
+    color: white;
 }
+
+
+
+
+
 #calculadora{
     height: 400px;
     width: 300px;
@@ -12,7 +23,41 @@ body{
     box-shadow: 
         inset 0 0 5px 3px rgba(0, 0, 0, 0.3),
         0 0 5px 3px rgba(0, 0, 0, 0.3);
+    margin: 10px;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(4, 75px);
+    grid-template-rows: repeat(6, 66.6px);
 }
+.gridItem{
+    border: 1px solid tomato;
+    display: grid;
+    place-items: center;
+}
+.gridItem:nth-child(1){
+    background-color: rgb(124, 167, 124);
+
+    grid-row-start: 1;
+    grid-row-end: 3;
+    grid-column-start: 1;
+    grid-column-end: 5;    
+}
+.gridItem:nth-child(13){
+    background-color: red;
+    
+    grid-row-start: 5;
+    grid-row-end: 7;
+    grid-column-start: 4;
+    grid-column-end: 4;    
+}
+
+
+
+
+
+
+
+
 .botao{
     background: linear-gradient(130deg, rgb(133, 133, 133), rgb(68, 68, 68));
     height: 50px;
@@ -22,7 +67,9 @@ body{
         inset -4px -4px 2px rgba(0, 0, 0, 0.3),
         inset 1.4px 1.4px 2px rgba(0, 0, 0, 0.3),
         2px 2px 2px rgba(0, 0, 0, 0.1),
-        0 0 1px 1px black;    
+        0 0 1px 1px black;
+    display: grid;
+    place-items: center;
 }
 .botao:hover{
     background: linear-gradient(130deg, rgb(143, 143, 145), rgb(78, 78, 78));
