@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Lexend+Peta&display=swap');
+
 body{
     background: rgb(150, 150, 150);
     height: 100vh;
@@ -7,58 +8,77 @@ body{
     justify-content: center;
     align-items: center;
     flex-direction: column;
+
     font-family: 'Lexend Peta', sans-serif;
     color: white;
 }
 
 
 
-
-
+/* corpo da calculadora */
 #calculadora{
-    height: 400px;
+    height: 470px;
     width: 300px;
-    background-color: rgb(68, 68, 68);
+    background: linear-gradient(130deg, rgb(120, 120, 120), rgb(92, 91, 91));
     border-radius: 10px;
     box-shadow: 
         inset 0 0 5px 3px rgba(0, 0, 0, 0.3),
         0 0 5px 3px rgba(0, 0, 0, 0.3);
     margin: 10px;
-    padding: 20px;
+    padding: 25px;
+    
+}
+#corpo{
+    background-color: rgb(88, 88, 88);
+    border-radius: 10px;
     display: grid;
     grid-template-columns: repeat(4, 75px);
-    grid-template-rows: repeat(6, 66.6px);
+    grid-template-rows: repeat(7, 66.6px);
 }
+
+/* grid */
 .gridItem{
-    border: 1px solid tomato;
     display: grid;
     place-items: center;
 }
 .gridItem:nth-child(1){
-    background-color: rgb(124, 167, 124);
-
     grid-row-start: 1;
     grid-row-end: 3;
     grid-column-start: 1;
     grid-column-end: 5;    
 }
-.gridItem:nth-child(13){
-    background-color: red;
-    
-    grid-row-start: 5;
-    grid-row-end: 7;
+.gridItem:nth-child(17){
+    grid-row-start: 6;
+    grid-row-end: 8;
     grid-column-start: 4;
-    grid-column-end: 4;    
+    grid-column-end: 4;
+}
+.gridItem:nth-child(18){
+    border-bottom-left-radius: 10px;
 }
 
 
 
+#cabecalho{
+    background: linear-gradient(130deg, rgb(133, 133, 133), rgb(129, 129, 129));
+    border-radius: 30px;
+    height: 100px;
+    width: 90%;
+    display: grid;
+    place-items: center;
+}
+#visor{
+    background: linear-gradient(130deg, rgb(129, 231, 129), rgb(117, 199, 117));
+    border-radius: 10px;
+    height: 60px;
+    width: 95%;
+    box-shadow: 
+        inset 0px 0px 10px rgba(255, 255, 255, 0.8),
+        0px 0px 10px rgba(255, 255, 255, 0.4);
+}
 
-
-
-
-
-.botao{
+/* botões */
+.botao, .botaoMais, .botaoOn{
     background: linear-gradient(130deg, rgb(133, 133, 133), rgb(68, 68, 68));
     height: 50px;
     width: 50px;
@@ -68,11 +88,25 @@ body{
         inset 1.4px 1.4px 2px rgba(0, 0, 0, 0.3),
         2px 2px 2px rgba(0, 0, 0, 0.1),
         0 0 1px 1px black;
-    display: grid;
-    place-items: center;
+
+
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
     user-select: none;
 }
-.botao:hover{
+.botaoMais{
+    background: linear-gradient(130deg, rgb(230, 143, 143), rgb(228, 71, 71));
+    height: 115px;
+}
+.botaoOn{
+    background: linear-gradient(130deg, rgb(230, 143, 143), rgb(228, 71, 71));
+    border-radius: 100%;
+}
+
+.botao:hover, .botaoMais:hover, .botaoOn:hover{
     background: linear-gradient(130deg, rgb(143, 143, 145), rgb(78, 78, 78));
     box-shadow: 
         inset -4px -4px 2px rgba(10, 10, 10, 0.3),
@@ -80,7 +114,11 @@ body{
         2px 2px 2px rgba(10, 10, 10, 0.2),
         0 0 1px 1px rgb(10, 10, 10);
 }
-.botao:active{
+.botaoMais:hover, .botaoOn:hover{
+    background: linear-gradient(130deg, rgb(240, 153, 153), rgb(238, 81, 81));
+}
+
+.botao:active, .botaoMais:active, .botaoOn:active{
     background: linear-gradient(130deg, rgb(153, 153, 155), rgb(88, 88, 88));
     box-shadow: 
         inset -2px -2px 2px rgba(30, 30, 30, 0.3),
@@ -88,4 +126,7 @@ body{
         2px 2px 2px rgba(30, 30, 30, 0.1),
         0 0 1px 1px rgb(30, 30, 30);
     transform: rotate(180deg) scale(-0.99);
+}
+.botaoMais:active, .botaoOn:active{
+    background: linear-gradient(130deg, rgb(250, 163, 163), rgb(248, 91, 91));
 }
