@@ -102,10 +102,5 @@ var imgs = []
             vbarra.style.width = vtempo + "%"
             window.requestAnimationFrame(anima)
         }
-
-        function selecionaFoto() {
-            
-        }
-
         
         window.addEventListener('load', inicia)
