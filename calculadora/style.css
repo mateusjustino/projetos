@@ -60,11 +60,11 @@ body{
 }
 
 
-
+/* visor da calculadora */
 #cabecalho{
     background: linear-gradient(130deg, rgb(133, 133, 133), rgb(129, 129, 129));
     border-radius: 30px;
-    height: 100px;
+    height: 110px;
     width: 90%;
     display: grid;
     place-items: center;
@@ -72,20 +72,44 @@ body{
 }
 #visor{
     display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    font-size: 25px;
-    user-select: none;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    
     padding-right: 10px;
     background: linear-gradient(130deg, rgb(129, 231, 129), rgb(117, 199, 117));
     border-radius: 10px;
-    height: 60px;
+    height: 70px;
     width: 93%;
     box-shadow: 
         inset 0px 0px 10px rgba(255, 255, 255, 0.8),
         0px 0px 10px rgba(255, 255, 255, 0.4);
 
-    
+}
+#ultimaConta{
+    font-size: 15px;
+    padding-bottom: 5px;
+    user-select: none;    
+
+}
+#caracteres{
+    font-size: 25px;
+    user-select: none;    
+}
+#caracteres::after{
+    content: '';
+    border-right: 2px solid white;
+    border-radius: 10px;
+
+    animation-name: barraPiscando;
+    animation-duration: 1s;
+    animation-timing-function: cubic-bezier(0, 1);
+    animation-iteration-count: infinite;
+}
+@keyframes barraPiscando{    
+    to{
+        border-right: 2px solid transparent;
+    }
 }
 
 /* botões */
