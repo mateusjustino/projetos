@@ -1,5 +1,5 @@
 var on = false
-
+var maximoCaracteres = 12
 // var para os botoes
 
 var btnOn = document.getElementById('btnOn')
@@ -27,8 +27,15 @@ var btn9 = document.getElementById('btn9')
 btnOn.addEventListener('click', liga)
 btnOff.addEventListener('click', desliga)
 btnC.addEventListener('click', limpar)
+btnIgual.addEventListener('click', resultado)
 btnSoma.addEventListener('click', soma)
+btnSubtracao.addEventListener('click', subtracao)
+btnMultiplicacao.addEventListener('click', multiplicacao)
+btnDivisao.addEventListener('click', divisao)
 
+btnPonto.addEventListener('click', function () {
+    digitaNumero('.')
+})
 btn0.addEventListener('click', function () {
     digitaNumero(0)
 })
@@ -84,42 +91,110 @@ function desliga() {
     }
 }
 
-// função para digitar os números
-function digitaNumero(n1) {
-    if (on == true) {
-        var caracteres = document.getElementById('caracteres')
-        caracteres.innerHTML += n1
-    }    
-}
-
 function limpar() {
     if (on == true) {
         var caracteres = document.getElementById('caracteres')
-        caracteres.innerHTML = ''
+        caracteres.innerText = ''
     }    
+}
+
+// função para digitar os números
+function digitaNumero(n1) { // essa função é chamada dentro do verificaWidthVisor
+    if (on == true) {
+        verificaWidthVisor('digito', n1)
+    }    
+}
+
+
+// rotinas de verificação
+function verificaUltimoNumero() {
+    // aqui eu pego o ultimo caracter
+    var caracteres = document.getElementById('caracteres').innerText
+    var ultimoCaracter = caracteres.charAt(caracteres.length - 1)
+
+    //verifico se é numero ou nao e tbm se nao esta vazio
+    if ((isNaN(ultimoCaracter)) | (caracteres == '')) {
+        return false // aqui cai quando não é número
+    }
+    else{
+        return true // aqui cai quando é número
+    }
+}
+
+function verificaWidthVisor(origem, caracteresVisor) {
+    var caracteres = document.getElementById('caracteres')
+
+    if (origem == 'digito') {
+        caracteres.innerText += caracteresVisor
+        if (caracteres.clientWidth > 240) { // aqui para nao permitir se digitar mais do que cabe no visor
+            var tiraUltimoCaracter = caracteres.innerText.replace(/.$/, '')
+            caracteres.innerText = tiraUltimoCaracter
+        }
+    }
+    else if (origem == 'resultado'){
+
+    }
+
+    // fazer o if do resultado e tbm conferir se vai poder colocar um sinal de operação(+) caso caiba mais um numero depois
+}
+
+// funções para operações
+function resultado() {
+    if (on == true) {
+        if (verificaUltimoNumero() == true) {
+            var caracteres = document.getElementById('caracteres')
+            var ultimaConta = document.getElementById('ultimaConta')
+            
+            ultimaConta.innerText = `${caracteres.innerText} = ${eval(caracteres.innerText)}`
+            
+            var resultado = eval(caracteres.innerText)
+            
+            if (verificaWidthVisor(resultado) == true) {
+                //caracteres.innerText = resultado
+                console.log('cabe de boa, deu true')
+            }
+            else{
+                console.log('maior que o limite = false')
+            }
+        }
+    }
+    
 }
 
 function soma() {
     if (on == true) {
-        if (verificaNumero()) {
+        if (verificaUltimoNumero() == true) {            
             var caracteres = document.getElementById('caracteres')
-            caracteres.innerHTML += '+'
-        }
-        
+            caracteres.innerText += '+'   
+        }             
     }
 }
-// fazer a função para checar se é numero ou nao na hora de fazer uma soma
-function verificaNumero() {
-    var caracteres = document.getElementById('caracteres').innerText
-    ultimoCaracter = caracteres.charAt(caracteres.length - 1)
-    console.log(ultimoCaracter)
-    if (ultimoCaracter.isNan()) {
-        return false
-    }
-    else{
-        return true
+function subtracao() {
+    if (on == true) {
+        if (verificaUltimoNumero() == true) {
+            var caracteres = document.getElementById('caracteres')
+            caracteres.innerText += '-'   
+        }             
     }
 }
+function multiplicacao() {
+    if (on == true) {
+        if (verificaUltimoNumero() == true) {
+            var caracteres = document.getElementById('caracteres')
+            caracteres.innerText += '*'   
+        }             
+    }
+}
+function divisao() {
+    if (on == true) {
+        if (verificaUltimoNumero() == true) {
+            var caracteres = document.getElementById('caracteres')
+            caracteres.innerText += '/'   
+        }             
+    }
+}
+
+
 
 
 
