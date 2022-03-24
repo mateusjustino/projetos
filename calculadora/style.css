@@ -1,8 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Lexend+Peta&display=swap');
 
+:root{
+    --backgroundPage: linear-gradient(130deg, rgb(138, 138, 138), rgb(179, 179, 179), rgb(138, 138, 138), rgb(179, 179, 179));
+    --fonte: white;
+    --backgroundCalculadora: linear-gradient(130deg, rgb(133, 133, 133), rgb(102, 102, 102));
+    --backgroundCorpo: linear-gradient(130deg, rgb(104, 104, 104), rgb(88, 88, 88));
+    --backgroundCabecalho: linear-gradient(130deg, rgb(133, 133, 133), rgb(133, 133, 133));
+    --backgroundBtn: linear-gradient(130deg, rgb(133, 133, 133), rgb(68, 68, 68));
+
+}
 body{
-    background: rgb(150, 150, 150);
-    height: 100vh;
+    background: var(--backgroundPage);
+    background-attachment: fixed;
     margin: auto;
     display: flex;
     justify-content: center;
@@ -10,16 +19,22 @@ body{
     flex-direction: column;
 
     font-family: 'Lexend Peta', sans-serif;
-    color: white;
+    color: var(--fonte);
 }
-
-
+footer{
+    margin: 20px;
+    margin-bottom: 100px;
+    text-align: justify;
+    max-width: 700px;
+    position: relative;
+    top: 70px;
+}
 
 /* corpo da calculadora */
 #calculadora{
     height: 470px;
     width: 300px;
-    background: linear-gradient(130deg, rgb(120, 120, 120), rgb(92, 91, 91));
+    background: var(--backgroundCalculadora);
     border-radius: 10px;
     box-shadow: 
         inset 0 0 5px 3px rgba(0, 0, 0, 0.3),
@@ -29,7 +44,7 @@ body{
     
 }
 #corpo{
-    background-color: rgb(88, 88, 88);
+    background: var(--backgroundCorpo);
     border-radius: 10px;
     display: grid;
     grid-template-columns: repeat(4, 75px);
@@ -43,26 +58,23 @@ body{
     display: grid;
     place-items: center;
 }
-.gridItem:nth-child(1){
+.gridItem:nth-child(1){ /* grid do visor */
     grid-row-start: 1;
     grid-row-end: 3;
     grid-column-start: 1;
     grid-column-end: 5;    
 }
-.gridItem:nth-child(17){
+.gridItem:nth-child(17){ /* grid do + */
     grid-row-start: 6;
     grid-row-end: 8;
     grid-column-start: 4;
     grid-column-end: 4;
 }
-.gridItem:nth-child(18){
-    border-bottom-left-radius: 10px;
-}
 
 
 /* visor da calculadora */
 #cabecalho{
-    background: linear-gradient(130deg, rgb(133, 133, 133), rgb(129, 129, 129));
+    background: var(--backgroundCabecalho);
     border-radius: 30px;
     height: 120px;
     width: 90%;
@@ -89,7 +101,8 @@ body{
 #ultimaConta{
     font-size: 15px;
     padding-bottom: 5px;
-    user-select: none;    
+    user-select: none;  
+    text-align: right;  
 
 }
 #caracteres{
@@ -114,7 +127,7 @@ body{
 
 /* botões */
 .botao, .botaoMais, .botaoOn{
-    background: linear-gradient(130deg, rgb(133, 133, 133), rgb(68, 68, 68));
+    background: var(--backgroundBtn);
     height: 50px;
     width: 50px;
     border-radius: 10px;
@@ -132,6 +145,7 @@ body{
     
     user-select: none;
 }
+
 .botaoMais{
     background: linear-gradient(130deg, rgb(230, 143, 143), rgb(228, 71, 71));
     height: 115px;

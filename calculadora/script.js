@@ -1,7 +1,6 @@
 var on = false
-var maximoCaracteres = 12
-// var para os botoes
 
+// var para os botoes
 var btnOn = document.getElementById('btnOn')
 var btnOff = document.getElementById('btnOff')
 var btnC = document.getElementById('btnC')
@@ -107,7 +106,7 @@ function digitaNumero(n1) { // essa função é chamada dentro do verificaWidthV
 
 
 // rotinas de verificação
-function verificaUltimoNumero() {
+function verificaUltimoNumero() { //para que não se repita sinais, ex:1++1
     // aqui eu pego o ultimo caracter
     var caracteres = document.getElementById('caracteres').innerText
     var ultimoCaracter = caracteres.charAt(caracteres.length - 1)
@@ -131,11 +130,30 @@ function verificaWidthVisor(origem, caracteresVisor) {
             caracteres.innerText = tiraUltimoCaracter
         }
     }
+
     else if (origem == 'resultado'){
+        var guardaOperacao = caracteresVisor
+        caracteres.innerText = eval(caracteresVisor)
+        if (caracteres.clientWidth > 240) {
+            var caracteresTxt = caracteres.innerText.toString()
+            caracteres.innerText = caracteresTxt
+                        
+            while (caracteres.clientWidth > 240){
+                caracteres.innerText = caracteres.innerText.replace(/.$/, '')
+            }
 
+            ultimaConta.innerText = `${caracteres.innerText} = ${eval(caracteres.innerText)}`
+        }
+        else{
+            ultimaConta.innerText = `${guardaOperacao} = ${eval(caracteres.innerText)}`
+        }
     }
-
-    // fazer o if do resultado e tbm conferir se vai poder colocar um sinal de operação(+) caso caiba mais um numero depois
+    
+    else if (origem == 'operacao'){
+        if (caracteres.clientWidth < 210) { // aqui para nao permitir se digitar mais do que cabe no visor
+            caracteres.innerText += caracteresVisor
+        }
+    }
 }
 
 // funções para operações
@@ -143,19 +161,7 @@ function resultado() {
     if (on == true) {
         if (verificaUltimoNumero() == true) {
             var caracteres = document.getElementById('caracteres')
-            var ultimaConta = document.getElementById('ultimaConta')
-            
-            ultimaConta.innerText = `${caracteres.innerText} = ${eval(caracteres.innerText)}`
-            
-            var resultado = eval(caracteres.innerText)
-            
-            if (verificaWidthVisor(resultado) == true) {
-                //caracteres.innerText = resultado
-                console.log('cabe de boa, deu true')
-            }
-            else{
-                console.log('maior que o limite = false')
-            }
+            verificaWidthVisor('resultado', caracteres.innerText)
         }
     }
     
@@ -163,33 +169,29 @@ function resultado() {
 
 function soma() {
     if (on == true) {
-        if (verificaUltimoNumero() == true) {            
-            var caracteres = document.getElementById('caracteres')
-            caracteres.innerText += '+'   
+        if (verificaUltimoNumero() == true) {     
+            verificaWidthVisor('operacao', '+')
         }             
     }
 }
 function subtracao() {
     if (on == true) {
         if (verificaUltimoNumero() == true) {
-            var caracteres = document.getElementById('caracteres')
-            caracteres.innerText += '-'   
+            verificaWidthVisor('operacao', '-')
         }             
     }
 }
 function multiplicacao() {
     if (on == true) {
         if (verificaUltimoNumero() == true) {
-            var caracteres = document.getElementById('caracteres')
-            caracteres.innerText += '*'   
+            verificaWidthVisor('operacao', '*')
         }             
     }
 }
 function divisao() {
     if (on == true) {
         if (verificaUltimoNumero() == true) {
-            var caracteres = document.getElementById('caracteres')
-            caracteres.innerText += '/'   
+            verificaWidthVisor('operacao', '/')
         }             
     }
 }
