@@ -79,6 +79,7 @@ function liga() {
         visor.appendChild(div2) 
 
         on = true
+        
     }
 }
 function desliga() {

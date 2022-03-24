@@ -10,7 +10,7 @@
 
 }
 body{
-    background: var(--backgroundPage);
+    background: transparent;
     background-attachment: fixed;
     margin: auto;
     display: flex;
