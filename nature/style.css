@@ -1,11 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;400;500;700&display=swap');
+
 :root{
     --cor1: #acf553;
     --cor2: #7fff4d;
     --cor3: #46e644;
     --cor4: #3ffc66;
     --cor5: #47f590;
-    --angle: 45deg
+    --corFonte: black;
+    --angle: 45deg;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    border: 1px solid;
 }
 body{
-    background: whitesmoke;
+    background: whitesmoke;    
+    color: var(--corFonte);
+    font-family: 'Nunito', sans-serif;
+    height: 100vh;
+
+    margin: auto;
+    max-width: 1400px;
 }
+
+header{
+    display: flex;
+    justify-content: space-between;
+}
+
+nav{
+    display: block;
+    margin: 10px;
+}
+nav > ul{
+    height: 100px;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+nav > ul > li > a{
+    margin: 5px;
+    text-decoration: none;
+    color: var(--corFonte);
+}
+
+h1, h2, footer{
+    text-align: center;
+    margin: 15px;
+}
+section{
+    margin: 10px;
+    display: flex;
+    justify-content: center;    
+}
+
+
+#logo{
+    background-image: url(img/eco-5465473-removebg-preview.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    min-width: 100px;
+    height: 100px;
+    margin: 10px;
+}
+
+#burguer{
+    margin: 10px;
+    height: 100px;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: var(--tempo) ease;
+}
+.bar{
+    width: 50px;
+    height: 8px;
+    background-color: var(--corFonte);
+    border-radius: 5px;
+    position: relative;
+    transition: var(--tempo) ease;
+}
+#bar1{
+    transform: translateY(-5px);
+}
+#bar3{
+    transform: translateY(5px);
+}
+
+#slide{
+    max-width: 1000px;
+    border: 1px solid red;
+    height: 400px;
+    width: 100%;
+    background-image: url(img/1.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+@media (max-width: 420px){
+    body{
+        background-color: rgba(255, 0, 0, 0.192);
+    }
+    nav{
+        display: none;
+    }
+    #burguer{
+        display: flex;
+    }
+
+    /* nao dar display none no menu padrao, apenas jogar para fora da pagina na direita e quando clicar no burguer, trazer ele de volta */
+}
+/*
+@media (min-width: 421px){
+    nav{
+        display: block;
+    }
+    #burguer{
+        display: none;
+    }
+}
+*/
