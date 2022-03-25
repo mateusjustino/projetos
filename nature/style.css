@@ -14,7 +14,6 @@
     padding: 0;
     box-sizing: border-box;
 
-    border: 1px solid;
 }
 body{
     background: whitesmoke;    
@@ -27,12 +26,12 @@ body{
 }
 
 header{
+    font-size: 20px;
     display: flex;
     justify-content: space-between;
 }
 
 nav{
-    display: block;
     margin: 10px;
 }
 nav > ul{
@@ -106,24 +105,35 @@ section{
 
 @media (max-width: 420px){
     body{
-        background-color: rgba(255, 0, 0, 0.192);
+        overflow: hidden;
     }
     nav{
-        display: none;
+        background-color: rgba(255, 255, 255, 0.685);
+        position: absolute;
+        left: 420px;
+        width: 100%;
+        margin: 0;
+        margin-top: 10px;
     }
+    nav > ul{
+        height: 150px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    nav > ul > li{
+        margin: 5px;
+    }
+    
     #burguer{
         display: flex;
+        z-index: 1;
+    }
+    #logo{
+        z-index: 1;
     }
 
     /* nao dar display none no menu padrao, apenas jogar para fora da pagina na direita e quando clicar no burguer, trazer ele de volta */
 }
-/*
-@media (min-width: 421px){
-    nav{
-        display: block;
-    }
-    #burguer{
-        display: none;
-    }
-}
-*/
+

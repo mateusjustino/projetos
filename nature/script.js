@@ -52,6 +52,7 @@ function sliderAutomatico() {
 
 // menu hamburguer
 
+var page = document.getElementsByTagName('main')[0]
 var menu = document.getElementsByTagName('nav')[0]
 var menuAberto = false
 var burguer = document.getElementById('burguer')
@@ -93,11 +94,14 @@ burguer.addEventListener('click', function () {
 })
 
 function abreMenu() {
-    menu.style.left = '-30px'
-    menu.style.opacity = '100'
+    menu.style.transition = '1s'
+    menu.style.left = '0px'
+    page.style.filter = 'blur(2px)'
 }
 function fechaMenu() {
-    menu.style.left = '-130px'
-    menu.style.opacity = '0'
+    menu.style.transition = '1s'
+    menu.style.left = '420px'
+    page.style.filter = 'blur(0px)'
+    
 
 }
