@@ -1,0 +1,11 @@
+:root{
+    --cor1: #acf553;
+    --cor2: #7fff4d;
+    --cor3: #46e644;
+    --cor4: #3ffc66;
+    --cor5: #47f590;
+    --angle: 45deg
+}
+body{
+    background: whitesmoke;
+}
