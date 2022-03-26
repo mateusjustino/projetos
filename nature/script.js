@@ -112,7 +112,7 @@ function imgAnterior() {
     tmpTrocaSlide = 0
 }
 
-// menu hamburguer
+// menu hamburguer ------------------------------
 
 var pageMain = document.getElementsByTagName('main')[0]
 var pageFooter = document.getElementsByTagName('footer')[0]
@@ -179,6 +179,16 @@ function fechaMenu() {
     pageMain.style.filter = 'blur(0px)'
     pageFooter.style.transition = '0.7s'
     pageFooter.style.filter = 'blur(0px)'
-    
+}
 
+// ampliar uma img ----------------------
+
+var img = document.getElementById('imgFloresta')
+img.addEventListener('click', ampliaImg)
+function ampliaImg() {
+    var header = document.getElementsByTagName('header')[0]
+    var main = document.getElementsByTagName('main')[0]
+    var footer = document.getElementsByTagName('footer')[0]
+    img.style.filter = 'grayscale(0)'
+    img.style.transform = 'scale(2)'
 }
