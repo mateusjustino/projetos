@@ -138,6 +138,7 @@ burguer.addEventListener('click', function () {
 
 
         menuAberto = true
+        menu.style.display = 'block'
         abreMenu()
     }
     else{
@@ -152,11 +153,13 @@ burguer.addEventListener('click', function () {
         bar2.style.opacity = '100'
 
         menuAberto = false
+        menu.style.display = 'none'
         fechaMenu()
     }
 })
 
 function abreMenu() {
+    
     menu.style.transition = '0.7s'
     menu.style.left = '0px'
     document.body.style.overflowY = 'hidden'
@@ -166,6 +169,8 @@ function abreMenu() {
     pageFooter.style.filter = 'blur(5px)'
 }
 function fechaMenu() {
+    
+
     menu.style.transition = '0.7s'
     menu.style.left = '440px'
     document.body.style.overflowY = 'visible'
