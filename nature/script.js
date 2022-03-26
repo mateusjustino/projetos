@@ -64,7 +64,7 @@ function carregarImg(img) { //func para carregar a img
     divSlide.style.backgroundImage = "url('img/"+img+".jpg')"
 
     for (let i = 1; i < 6; i++) {        
-        var bolinha = document.getElementById('posSlide' + i)    
+        var bolinha = document.getElementById('posSlide' + i)
         bolinha.style.backgroundColor = 'white'
     }
 
@@ -149,15 +149,19 @@ burguer.addEventListener('click', function () {
 })
 
 function abreMenu() {
-    menu.style.transition = '1s'
+    menu.style.transition = '0.7s'
     menu.style.left = '0px'
+    pageMain.style.transition = '0.7s'
     pageMain.style.filter = 'blur(5px)'
+    pageFooter.style.transition = '0.7s'
     pageFooter.style.filter = 'blur(5px)'
 }
 function fechaMenu() {
-    menu.style.transition = '1s'
+    menu.style.transition = '0.7s'
     menu.style.left = '440px'
+    pageMain.style.transition = '0.7s'
     pageMain.style.filter = 'blur(0px)'
+    pageFooter.style.transition = '0.7s'
     pageFooter.style.filter = 'blur(0px)'
     
 

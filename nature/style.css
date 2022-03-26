@@ -8,6 +8,8 @@
     --cor5: #47f590;
     --corFonte: black;
     --angle: 45deg;
+    --hover: var(--cor5);
+    --active: var(--cor4);
 }
 *{
     margin: 0;
@@ -105,6 +107,7 @@ section{
     background-repeat: no-repeat;
     background-size: 100% 100%;
     border-radius: 10px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -121,6 +124,12 @@ section{
     flex-direction: column;
     justify-content: center;
     transform: rotate(180deg);
+}
+#btnAnterior:hover::after, #btnAnterior:hover::before, #btnProximo:hover::after, #btnProximo:hover::before{
+    background: var(--hover);
+}
+#btnAnterior:active::after, #btnAnterior:active::before, #btnProximo:active::after, #btnProximo:active::before{
+    background: var(--active);
 }
 #btnProximo{
     transform: rotate(0deg);
@@ -176,7 +185,7 @@ section{
         z-index: 2;
     }
     nav{
-        background-color: rgba(255, 255, 255, 0.8);
+        background-color: rgba(255, 255, 255, 0.6);
         position: absolute;
         left: 500px;
         width: 100%;
