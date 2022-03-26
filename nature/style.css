@@ -20,6 +20,7 @@
 }
 body{
     background: url(img/tile_background.png);
+    background-position: center center;
     color: var(--corFonte);
     font-family: 'Nunito', sans-serif;
     margin: auto;
