@@ -22,7 +22,6 @@ body{
     background: url(img/tile_background.png);
     color: var(--corFonte);
     font-family: 'Nunito', sans-serif;
-    height: 100%;
     margin: auto;
     max-width: 1000px;
     overflow-x: hidden;
