@@ -14,14 +14,15 @@
     padding: 0;
     box-sizing: border-box;
 
+    border: 1px solid;
 }
 body{
     background: whitesmoke;    
     color: var(--corFonte);
     font-family: 'Nunito', sans-serif;
-
+    height: 100%;
     margin: auto;
-    max-width: 1400px;
+    max-width: 1100px;
     overflow: hidden;
 }
 
