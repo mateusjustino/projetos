@@ -159,20 +159,20 @@ burguer.addEventListener('click', function () {
 function abreMenu() {
     menu.style.transition = '0.7s'
     menu.style.left = '0px'
-    pageMain.style.overflow = 'hidden'
+    pageMain.style.overflowY = 'hidden'
     pageMain.style.transition = '0.7s'
     pageMain.style.filter = 'blur(5px)'
-    pageFooter.style.overflow = 'hidden'
+    pageFooter.style.overflowY = 'hidden'
     pageFooter.style.transition = '0.7s'
     pageFooter.style.filter = 'blur(5px)'
 }
 function fechaMenu() {
     menu.style.transition = '0.7s'
     menu.style.left = '440px'
-    pageMain.style.overflow = 'visible'
+    pageMain.style.overflowY = 'visible'
     pageMain.style.transition = '0.7s'
     pageMain.style.filter = 'blur(0px)'
-    pageFooter.style.overflow = 'visible'
+    pageFooter.style.overflowY = 'visible'
     pageFooter.style.transition = '0.7s'
     pageFooter.style.filter = 'blur(0px)'
     
