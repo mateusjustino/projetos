@@ -138,7 +138,7 @@ burguer.addEventListener('click', function () {
 
 
         menuAberto = true
-        menu.style.display = 'block'
+        
         abreMenu()
     }
     else{
@@ -153,7 +153,6 @@ burguer.addEventListener('click', function () {
         bar2.style.opacity = '100'
 
         menuAberto = false
-        menu.style.display = 'none'
         fechaMenu()
     }
 })
