@@ -19,7 +19,7 @@
 
 }
 body{
-    background: whitesmoke;    
+    background: url(img/tile_background.png);
     color: var(--corFonte);
     font-family: 'Nunito', sans-serif;
     height: 100%;
