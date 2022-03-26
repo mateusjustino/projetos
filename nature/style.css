@@ -1,20 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;400;500;700&display=swap');
 
 :root{
-    --cor1: #acf553;
-    --cor2: #7fff4d;
-    --cor3: #46e644;
-    --cor4: #3ffc66;
-    --cor5: #47f590;
+    --cor1: #00ed47;
+    --cor2: #00e043;
+    --cor3: #00c73c;
+    --cor4: #00a130;
+    --cor5: #00661e;
     --corFonte: black;
     --angle: 45deg;
-    --hover: var(--cor5);
-    --active: var(--cor4);
+    --hover: rgb(200, 220, 200);
+    --active: rgb(180, 200, 180);    
 }
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    text-shadow: 0px 0px 1px var(--cor3);
 
 }
 body{
@@ -23,12 +24,13 @@ body{
     font-family: 'Nunito', sans-serif;
     height: 100%;
     margin: auto;
-    max-width: 1100px;
+    max-width: 1000px;
+    overflow-x: hidden;
 }
 
 h1, h2, footer{
     text-align: center;
-    margin: 15px;
+    margin: 15px;    
 }
 
 /* header ---------------------------------------- */
@@ -53,6 +55,13 @@ nav > ul > li > a{
     margin: 5px;
     text-decoration: none;
     color: var(--corFonte);
+
+}
+nav > ul > li > a:hover{
+    color: var(--hover);
+}
+nav > ul > li > a:active{
+    color: var(--active);
 }
 
 
@@ -80,6 +89,7 @@ nav > ul > li > a{
     width: 50px;
     height: 8px;
     background-color: var(--corFonte);
+    box-shadow: 0px 0px 2px rgba(0, 50, 0, 0.4);
     border-radius: 5px;
     position: relative;
     transition: var(--tempo) ease;
@@ -107,7 +117,7 @@ section{
     background-repeat: no-repeat;
     background-size: 100% 100%;
     border-radius: 10px;
-    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.4);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -125,10 +135,10 @@ section{
     justify-content: center;
     transform: rotate(180deg);
 }
-#btnAnterior:hover::after, #btnAnterior:hover::before, #btnProximo:hover::after, #btnProximo:hover::before{
+#btnAnterior:hover::after, #btnAnterior:hover::before, #btnProximo:hover::after, #btnProximo:hover::before, .posSlide:hover{
     background: var(--hover);
 }
-#btnAnterior:active::after, #btnAnterior:active::before, #btnProximo:active::after, #btnProximo:active::before{
+#btnAnterior:active::after, #btnAnterior:active::before, #btnProximo:active::after, #btnProximo:active::before, .posSlide:active{
     background: var(--active);
 }
 #btnProximo{
@@ -178,9 +188,7 @@ section{
 /*fim slide -------------------------------------*/
 
 @media (max-width: 440px){
-    body{
-        overflow-x: hidden;        
-    }
+    
     main{
         z-index: 2;
     }

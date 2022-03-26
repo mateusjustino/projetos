@@ -70,7 +70,7 @@ function carregarImg(img) { //func para carregar a img
 
     var bolinha = document.getElementById('posSlide' + img)   
     bolinha.style.transition = '0.3s' 
-    bolinha.style.backgroundColor = 'rgb(160, 160, 160)'
+    bolinha.style.backgroundColor = 'rgb(160, 180, 160)'
 }
 function trocaImg() { // func para trocar a img
     imgAtual++
@@ -151,16 +151,20 @@ burguer.addEventListener('click', function () {
 function abreMenu() {
     menu.style.transition = '0.7s'
     menu.style.left = '0px'
+    pageMain.style.overflow = 'hidden'
     pageMain.style.transition = '0.7s'
     pageMain.style.filter = 'blur(5px)'
+    pageFooter.style.overflow = 'hidden'
     pageFooter.style.transition = '0.7s'
     pageFooter.style.filter = 'blur(5px)'
 }
 function fechaMenu() {
     menu.style.transition = '0.7s'
     menu.style.left = '440px'
+    pageMain.style.overflow = 'visible'
     pageMain.style.transition = '0.7s'
     pageMain.style.filter = 'blur(0px)'
+    pageFooter.style.overflow = 'visible'
     pageFooter.style.transition = '0.7s'
     pageFooter.style.filter = 'blur(0px)'
     
