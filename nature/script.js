@@ -20,13 +20,13 @@ function funcModoNoturno() {
 }
 
 //slide ------------------------------------------------------
-
+var imgs = []
 var imgAtual = 0
 var tmpTrocaSlide = 0
 var tmpTrocaSlideProx = 150
 var divSlide = document.getElementById('slide')
 
-// botoes do sliede
+// botoes do slide
 document.getElementById('btnProximo').addEventListener('click', imgProxima)
 document.getElementById('btnAnterior').addEventListener('click', imgAnterior)
 //bolinha das posicoes do slide
@@ -56,12 +56,20 @@ document.getElementById('posSlide5').addEventListener('click', function () {
     tmpTrocaSlide = 0
 })
 
+preCarregamento()
 trocaImg() // para já iniciar a pagina com uma img
 sliderAutomatico() // para executar o slide automatico
 
+function preCarregamento() { //para já carregar as imagens ao iniciar a página, para evitar possivel loading
+    for (let i = 1; i < 6; i++) {
+        imgs[i] = new Image()
+        imgs[i] = "img/"+ i +".jpg"        
+    }
+}
+
 function carregarImg(img) { //func para carregar a img
     divSlide.style.transition = 'background-image 0.3s linear'
-    divSlide.style.backgroundImage = "url('img/"+img+".jpg')"
+    divSlide.style.backgroundImage = "url('"+imgs[imgAtual]+"')"
 
     for (let i = 1; i < 6; i++) {        
         var bolinha = document.getElementById('posSlide' + i)
