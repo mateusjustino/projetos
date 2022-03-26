@@ -189,6 +189,7 @@ section{
 @media (max-width: 440px){
     body{
         overflow-x: hidden;
+        max-width: 440px;
     }
     main{
         z-index: 2;
