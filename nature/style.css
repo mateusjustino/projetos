@@ -25,10 +25,17 @@ body{
     max-width: 1400px;
 }
 
+h1, h2, footer{
+    text-align: center;
+    margin: 15px;
+}
+
+/* header ---------------------------------------- */
 header{
     font-size: 20px;
     display: flex;
     justify-content: space-between;
+    height: 150px;
 }
 
 nav{
@@ -45,16 +52,6 @@ nav > ul > li > a{
     margin: 5px;
     text-decoration: none;
     color: var(--corFonte);
-}
-
-h1, h2, footer{
-    text-align: center;
-    margin: 15px;
-}
-section{
-    margin: 10px;
-    display: flex;
-    justify-content: center;    
 }
 
 
@@ -93,24 +90,93 @@ section{
     transform: translateY(5px);
 }
 
+/* fim header ---------------------------------------*/
+/* main ----------------------------------*/
+section{
+    margin: 10px;
+    display: flex;
+    justify-content: center;  
+    position: relative;
+}
+/* slide --------------------------------*/
 #slide{
     max-width: 1000px;
-    border: 1px solid red;
     height: 400px;
     width: 100%;
-    background-image: url(img/1.jpg);
     background-repeat: no-repeat;
     background-size: 100% 100%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-@media (max-width: 420px){
+#btnAnterior, #btnProximo{
+    cursor: pointer;
+    backdrop-filter: blur(0.5px);
+    border-radius: 20px;
+    width: 50px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    transform: rotate(180deg);
+}
+#btnProximo{
+    transform: rotate(0deg);
+}
+#btnAnterior::after, #btnAnterior::before, #btnProximo::after, #btnProximo::before{
+    content: '';
+    display: block;
+    width: 35px;
+    height: 5px;
+    border-radius: 10px;
+    background: white;
+    position: relative;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+}
+#btnAnterior::after, #btnProximo::after{
+    top: -14px;
+    transform: rotate(45deg);
+}
+#btnAnterior::before, #btnProximo::before{
+    top: 14px;
+    transform: rotate(-45deg);
+}
+
+#divPosSlide{
+    border-radius: 30px;
+    backdrop-filter: blur(0.5px);
+    position: relative;
+    top: 170px;
+    width: 250px;
+    height: 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.posSlide{
+
+    cursor: pointer;
+    background: white;
+    width: 15px;
+    height: 15px;
+    border-radius: 100%;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.479);
+}
+
+/*fim slide -------------------------------------*/
+
+@media (max-width: 440px){
     body{
         overflow: hidden;
     }
     nav{
-        background-color: rgba(255, 255, 255, 0.685);
+        background-color: rgba(255, 255, 255, 0.8);
         position: absolute;
-        left: 420px;
+        left: 440px;
         width: 100%;
         margin: 0;
         margin-top: 10px;
@@ -133,7 +199,5 @@ section{
     #logo{
         z-index: 1;
     }
-
-    /* nao dar display none no menu padrao, apenas jogar para fora da pagina na direita e quando clicar no burguer, trazer ele de volta */
 }
 

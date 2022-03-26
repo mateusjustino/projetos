@@ -21,26 +21,71 @@ function funcModoNoturno() {
 
 //slide ------------------------------------------------------
 
-var imgAtual = 1
+var imgAtual = 0
 var tmpTrocaSlide = 0
 var tmpTrocaSlideProx = 150
 var divSlide = document.getElementById('slide')
 
+// botoes do sliede
+document.getElementById('btnProximo').addEventListener('click', imgProxima)
+document.getElementById('btnAnterior').addEventListener('click', imgAnterior)
+//bolinha das posicoes do slide
+document.getElementById('posSlide1').addEventListener('click', function () {
+    imgAtual = 0
+    trocaImg()
+    tmpTrocaSlide = 0
+})
+document.getElementById('posSlide2').addEventListener('click', function () {
+    imgAtual = 1
+    trocaImg()
+    tmpTrocaSlide = 0
+})
+document.getElementById('posSlide3').addEventListener('click', function () {
+    imgAtual = 2
+    trocaImg()
+    tmpTrocaSlide = 0
+})
+document.getElementById('posSlide4').addEventListener('click', function () {
+    imgAtual = 3
+    trocaImg()
+    tmpTrocaSlide = 0
+})
+document.getElementById('posSlide5').addEventListener('click', function () {
+    imgAtual = 4
+    trocaImg()
+    tmpTrocaSlide = 0
+})
+
+trocaImg() // para já iniciar a pagina com uma img
+sliderAutomatico() // para executar o slide automatico
+
 function carregarImg(img) { //func para carregar a img
-    divSlide.style.transition = 'background-image 1s linear'
+    divSlide.style.transition = 'background-image 0.3s linear'
     divSlide.style.backgroundImage = "url('img/"+img+".jpg')"
+
+    for (let i = 1; i < 6; i++) {        
+        var bolinha = document.getElementById('posSlide' + i)    
+        bolinha.style.backgroundColor = 'white'
+    }
+
+    var bolinha = document.getElementById('posSlide' + img)   
+    bolinha.style.transition = '0.3s' 
+    bolinha.style.backgroundColor = 'rgb(160, 160, 160)'
 }
 function trocaImg() { // func para trocar a img
     imgAtual++
-    if (imgAtual == 6) {
+    if (imgAtual >= 6) {
         imgAtual = 1
+        carregarImg(imgAtual)
+    }
+    else if (imgAtual < 1){
+        imgAtual = 5
         carregarImg(imgAtual)
     }
     else{
         carregarImg(imgAtual)        
     }
 }
-sliderAutomatico()
 function sliderAutomatico() {
     tmpTrocaSlide++
     if (tmpTrocaSlide >= tmpTrocaSlideProx) {
@@ -48,6 +93,15 @@ function sliderAutomatico() {
         trocaImg()
     }
     window.requestAnimationFrame(sliderAutomatico)
+}
+function imgProxima() {
+    trocaImg()
+    tmpTrocaSlide = 0
+}
+function imgAnterior() {
+    imgAtual -= 2
+    trocaImg()
+    tmpTrocaSlide = 0
 }
 
 // menu hamburguer
@@ -100,7 +154,7 @@ function abreMenu() {
 }
 function fechaMenu() {
     menu.style.transition = '1s'
-    menu.style.left = '420px'
+    menu.style.left = '440px'
     page.style.filter = 'blur(0px)'
     
 
