@@ -106,7 +106,8 @@ function imgAnterior() {
 
 // menu hamburguer
 
-var page = document.getElementsByTagName('main')[0]
+var pageMain = document.getElementsByTagName('main')[0]
+var pageFooter = document.getElementsByTagName('footer')[0]
 var menu = document.getElementsByTagName('nav')[0]
 var menuAberto = false
 var burguer = document.getElementById('burguer')
@@ -150,12 +151,14 @@ burguer.addEventListener('click', function () {
 function abreMenu() {
     menu.style.transition = '1s'
     menu.style.left = '0px'
-    page.style.filter = 'blur(2px)'
+    pageMain.style.filter = 'blur(5px)'
+    pageFooter.style.filter = 'blur(5px)'
 }
 function fechaMenu() {
     menu.style.transition = '1s'
     menu.style.left = '440px'
-    page.style.filter = 'blur(0px)'
+    pageMain.style.filter = 'blur(0px)'
+    pageFooter.style.filter = 'blur(0px)'
     
 
 }
