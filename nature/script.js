@@ -170,15 +170,8 @@ function abreMenu() {
         li[i].style.margin = '25px'
         
     }
-    
-
     document.body.style.overflowY = 'hidden'
 
-    pageMain.style.transition = '0.7s'
-    pageMain.style.filter = 'blur(5px)'
-
-    pageFooter.style.transition = '0.7s'
-    pageFooter.style.filter = 'blur(5px)'
 }
 function fechaMenu() {
     nav.style.transition = '0.7s'
@@ -192,14 +185,6 @@ function fechaMenu() {
     }
     
     document.body.style.overflowY = 'visible'
-
-    
-    pageMain.style.transition = '0.7s'
-    pageMain.style.filter = 'blur(0px)'
-    
-    pageFooter.style.transition = '0.7s'
-    pageFooter.style.filter = 'blur(0px)'
-    
 }
 
 // ampliar uma img ----------------------
