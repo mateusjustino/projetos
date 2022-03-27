@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeria</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .cardImg{
+            width: 300px;
+            height: 300px;
+            overflow: hidden;
+            margin: 25px;
+        }
+        .smallImg{
+            height: 100%;
+            cursor: pointer;
+        }
+        .row{
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        #modalImg{
+            width: 65vw;
+        }
+        .modal{
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba(0, 0, 0, .7);
+            position: fixed;
+        }
+        .modalContent{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            visibility: hidden;
+        }
+        #btClose{
+            color: white;
+            background-color: black;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            padding: 5px 10px;
+            font-size: 25px;
+            border: solid 1px white;
+        }
+    </style>
+</head>
+<body>
+    <div class="modal">
+        <div class="modalContent">
+            <img src="https://images.pexels.com/photos/6332857/pexels-photo-6332857.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" id="modalImg">
+        </div>
+        <span id="btClose">&times;</span>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="cardImg">
+                <img src="https://images.pexels.com/photos/6332857/pexels-photo-6332857.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" class="smallImg">
+            </div>
+            <div class="cardImg">
+                <img src="https://images.pexels.com/photos/6332857/pexels-photo-6332857.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" class="smallImg">
+            </div>
+            <div class="cardImg">
+                <img src="https://images.pexels.com/photos/6332857/pexels-photo-6332857.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" class="smallImg">
+            </div>
+        </div>
+        <div class="row">
+            <div class="cardImg">
+                <img src="https://images.pexels.com/photos/6332857/pexels-photo-6332857.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" class="smallImg">
+            </div>
+            <div class="cardImg">
+                <img src="https://images.pexels.com/photos/6332857/pexels-photo-6332857.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" class="smallImg">
+            </div>
+            <div class="cardImg">
+                <img src="https://images.pexels.com/photos/6332857/pexels-photo-6332857.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" class="smallImg">
+            </div>
+        </div>
+    </div>
+</body>
+</html>

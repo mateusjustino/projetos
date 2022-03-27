@@ -139,6 +139,7 @@ burguer.addEventListener('click', function () {
 
         menuAberto = true
         
+        menu.style.visibility = 'visible'
         abreMenu()
     }
     else{
@@ -154,13 +155,13 @@ burguer.addEventListener('click', function () {
 
         menuAberto = false
         fechaMenu()
+        menu.style.visibility = 'hidden'
     }
 })
 
 function abreMenu() {
     
     menu.style.transition = '0.7s'
-    menu.style.display = 'block' /* no celular consigo arrastar para o lado e ver o menu do lado de fora */
     menu.style.left = '0px'
     document.body.style.overflowY = 'hidden'
     pageMain.style.transition = '0.7s'
@@ -172,7 +173,6 @@ function fechaMenu() {
     
 
     menu.style.transition = '0.7s'
-    menu.style.display = 'none'
     menu.style.left = '440px'
     document.body.style.overflowY = 'visible'
     pageMain.style.transition = '0.7s'
