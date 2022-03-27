@@ -116,7 +116,9 @@ function imgAnterior() {
 
 var pageMain = document.getElementsByTagName('main')[0]
 var pageFooter = document.getElementsByTagName('footer')[0]
-var menu = document.getElementsByTagName('nav')[0]
+var nav = document.getElementsByTagName('nav')[0]
+var li = document.getElementsByTagName('li')
+var ul = document.getElementsByTagName('ul')[0]
 var menuAberto = false
 var burguer = document.getElementById('burguer')
 burguer.addEventListener('click', function () {
@@ -139,7 +141,6 @@ burguer.addEventListener('click', function () {
 
         menuAberto = true
         
-        menu.style.visibility = 'visible'
         abreMenu()
     }
     else{
@@ -155,40 +156,69 @@ burguer.addEventListener('click', function () {
 
         menuAberto = false
         fechaMenu()
-        menu.style.visibility = 'hidden'
     }
 })
 
 function abreMenu() {
+    nav.style.transition = '0.7s'
+    nav.style.visibility = 'visible'
+    nav.style.opacity = '1'
+
     
-    menu.style.transition = '0.7s'
-    menu.style.left = '0px'
+    for (let i = 0; i < li.length; i++) {
+        li[i].style.transition = '1s'
+        li[i].style.margin = '25px'
+        
+    }
+    
+
     document.body.style.overflowY = 'hidden'
+
     pageMain.style.transition = '0.7s'
     pageMain.style.filter = 'blur(5px)'
+
     pageFooter.style.transition = '0.7s'
     pageFooter.style.filter = 'blur(5px)'
 }
 function fechaMenu() {
+    nav.style.transition = '0.7s'
+    nav.style.visibility = 'hidden'
+    nav.style.opacity = '0'
     
-
-    menu.style.transition = '0.7s'
-    menu.style.left = '440px'
+    
+    for (let i = 0; i < li.length; i++) {
+        li[i].style.transition = '1s'
+        li[i].style.margin = '0px'
+    }
+    
     document.body.style.overflowY = 'visible'
+
+    
     pageMain.style.transition = '0.7s'
     pageMain.style.filter = 'blur(0px)'
+    
     pageFooter.style.transition = '0.7s'
     pageFooter.style.filter = 'blur(0px)'
+    
 }
 
 // ampliar uma img ----------------------
+var imgTeste = document.getElementById('imgFloresta')
+imgTeste.addEventListener('click', ampliaImg)
 
-var img = document.getElementById('imgFloresta')
-img.addEventListener('click', ampliaImg)
 function ampliaImg() {
-    var header = document.getElementsByTagName('header')[0]
-    var main = document.getElementsByTagName('main')[0]
-    var footer = document.getElementsByTagName('footer')[0]
-    img.style.filter = 'grayscale(0)'
-    img.style.transform = 'scale(2)'
+    var divModal = document.createElement('div')
+    divModal.setAttribute('id', 'modal')
+    document.body.appendChild(divModal)
+
+    //document.body.style.overflow = 'hidden'
+    //aqui para remover quando clicar na tela fora da img
+    divModal.addEventListener('click', function () {
+        divModal.remove()
+        //document.body.style.overflow = 'visible'
+
+    })
 }
+
+
+

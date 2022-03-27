@@ -19,6 +19,11 @@
         .smallImg{
             height: 100%;
             cursor: pointer;
+            transition: all linear 0.4s;
+        }
+        .smallImg:hover{
+            filter: grayscale(100%);
+            transform: scale(1.1);
         }
         .row{
             display: flex;
@@ -33,13 +38,16 @@
             height: 100vh;
             background-color: rgba(0, 0, 0, .7);
             position: fixed;
+            visibility: hidden;
+            z-index: 1;
+            opacity: 0;
+            transition: visibility 0.8s linear, opacity 0.5s linear;
         }
         .modalContent{
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            visibility: hidden;
         }
         #btClose{
             color: white;
@@ -50,6 +58,10 @@
             padding: 5px 10px;
             font-size: 25px;
             border: solid 1px white;
+        }
+        .modalActive{
+            visibility: visible;
+            opacity: 1;
         }
     </style>
 </head>
@@ -66,23 +78,41 @@
                 <img src="https://images.pexels.com/photos/6332857/pexels-photo-6332857.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" class="smallImg">
             </div>
             <div class="cardImg">
-                <img src="https://images.pexels.com/photos/6332857/pexels-photo-6332857.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" class="smallImg">
+                <img src="https://images.pexels.com/photos/11341064/pexels-photo-11341064.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" class="smallImg">
             </div>
             <div class="cardImg">
-                <img src="https://images.pexels.com/photos/6332857/pexels-photo-6332857.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" class="smallImg">
+                <img src="https://images.pexels.com/photos/11291986/pexels-photo-11291986.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" class="smallImg">
             </div>
         </div>
         <div class="row">
             <div class="cardImg">
-                <img src="https://images.pexels.com/photos/6332857/pexels-photo-6332857.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" class="smallImg">
+                <img src="https://images.pexels.com/photos/10194726/pexels-photo-10194726.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" class="smallImg">
             </div>
             <div class="cardImg">
-                <img src="https://images.pexels.com/photos/6332857/pexels-photo-6332857.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" class="smallImg">
+                <img src="https://images.pexels.com/photos/11358749/pexels-photo-11358749.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" class="smallImg">
             </div>
             <div class="cardImg">
-                <img src="https://images.pexels.com/photos/6332857/pexels-photo-6332857.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" class="smallImg">
+                <img src="https://images.pexels.com/photos/11542210/pexels-photo-11542210.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" class="smallImg">
             </div>
         </div>
     </div>
+    <script>
+        let imagens = document.querySelectorAll('.smallImg')
+        let modal = document.querySelector('.modal')
+        let modalImg = document.querySelector('#modalImg')
+        let btClose = document.querySelector('#btClose')
+        let srcVal = ''
+
+        for (let i = 0; i < imagens.length; i++) {
+            imagens[i].addEventListener('click', function(){
+                srcVal = imagens[i].getAttribute('src')
+                modalImg.setAttribute('src', srcVal)
+                modal.classList.toggle('modalActive')
+            })
+        }
+        btClose.addEventListener('click', function () {
+            modal.classList.toggle('modalActive')
+        })
+    </script>
 </body>
 </html>
