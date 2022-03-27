@@ -120,46 +120,45 @@ var nav = document.getElementsByTagName('nav')[0]
 var li = document.getElementsByTagName('li')
 var ul = document.getElementsByTagName('ul')[0]
 var menuAberto = false
+
+
+var bar1 = document.getElementById('bar1')
+var bar2 = document.getElementById('bar2')
+var bar3 = document.getElementById('bar3')
+bar1.style.transition = '0.5s'
+bar2.style.transition = '0.5s'
+bar3.style.transition = '0.5s'
+
+nav.addEventListener('click', function () {
+    if (menuAberto == true) {
+        fechaMenu()
+        console.log('foi')
+    }
+})
 var burguer = document.getElementById('burguer')
 burguer.addEventListener('click', function () {
-    var bar1 = document.getElementById('bar1')
-    var bar2 = document.getElementById('bar2')
-    var bar3 = document.getElementById('bar3')
-    bar1.style.transition = '0.5s'
-    bar2.style.transition = '0.5s'
-    bar3.style.transition = '0.5s'
+    
 
     if (menuAberto == false) {
-        bar1.style.transform = 'rotate(45deg)'
-        bar1.style.top = '8px'
-
-        bar3.style.transform = 'rotate(-45deg)'
-        bar3.style.top = '-8px'
-
-        bar2.style.opacity = '0'
-
-
-        menuAberto = true
-        
         abreMenu()
     }
-    else{
-        bar1.style.transform = 'rotate(0deg)'
-        bar1.style.top = '0px'
-        bar1.style.transform = 'translateY(-5px)'
-
-        bar3.style.transform = 'rotate(0deg)'
-        bar3.style.top = '0px'
-        bar3.style.transform = 'translateY(5px)'
-
-        bar2.style.opacity = '100'
-
-        menuAberto = false
+    else{        
         fechaMenu()
     }
 })
 
 function abreMenu() {
+    bar1.style.transform = 'rotate(45deg)'
+    bar1.style.top = '8px'
+
+    bar3.style.transform = 'rotate(-45deg)'
+    bar3.style.top = '-8px'
+
+    bar2.style.opacity = '0'
+
+
+    menuAberto = true
+
     nav.style.transition = '0.7s'
     nav.style.visibility = 'visible'
     nav.style.opacity = '1'
@@ -174,6 +173,19 @@ function abreMenu() {
 
 }
 function fechaMenu() {
+    bar1.style.transform = 'rotate(0deg)'
+    bar1.style.top = '0px'
+    bar1.style.transform = 'translateY(-5px)'
+
+    bar3.style.transform = 'rotate(0deg)'
+    bar3.style.top = '0px'
+    bar3.style.transform = 'translateY(5px)'
+
+    bar2.style.opacity = '100'
+
+    menuAberto = false
+
+
     nav.style.transition = '0.7s'
     nav.style.visibility = 'hidden'
     nav.style.opacity = '0'
