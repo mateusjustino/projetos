@@ -208,6 +208,19 @@ function ampliaImg() {
     divModal.setAttribute('id', 'modal')
     document.body.appendChild(divModal)
 
+    var divModalContent = document.createElement('div')
+    divModalContent.setAttribute('id', 'modalContent')
+    divModal.appendChild(divModalContent)
+
+    var img = document.createElement('img')
+    img.setAttribute('src', 'img/floresta.jpg')
+    img.setAttribute('id', 'modalImg')
+    divModalContent.appendChild(img)
+
+    var span = document.createElement('span')
+    span.setAttribute('id', 'btnClose')
+    divModalContent.appendChild(span)
+
     //document.body.style.overflow = 'hidden'
     //aqui para remover quando clicar na tela fora da img
     divModal.addEventListener('click', function () {
@@ -216,6 +229,3 @@ function ampliaImg() {
 
     })
 }
-
-
-
