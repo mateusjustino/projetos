@@ -85,6 +85,7 @@ nav > ul > li > a:active{
     border-radius: 10px;
     overflow: hidden;
     transition: var(--tempo) ease;
+    cursor: pointer;
 }
 .bar{
     width: 50px;
