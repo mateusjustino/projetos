@@ -270,8 +270,8 @@ section{
 /* css para o modal (ampliar a img) -----------------------------*/
 
 #modal{
-    
-    backdrop-filter: blur(15px) grayscale(50%);
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(10px) grayscale(50%);
     position: fixed;
     width: 100vw;
     height: 100vh;
@@ -286,8 +286,8 @@ section{
     height: 100vh;
 }
 #modalImg{
-    width: 65vw;
-    height: 50vh;
+    width: 80vw;
+    height: 60vh;
     background-size: 100% 100%;
     border: var(--borderImg);
     box-shadow: var(--shadowImg);
@@ -302,8 +302,8 @@ section{
     font-size: 25px;    
     transition: all ease-out .4s;
     cursor: pointer;
-    background: black;
-    color: white;
+    background: rgba(255, 255, 255, 0.8);
+    color: black;
     border-radius: 100%;
 }
 
