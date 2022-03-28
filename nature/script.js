@@ -204,24 +204,47 @@ var img = document.getElementsByClassName('img')
 var imgUrl = ''
 var modalImg = document.getElementById('modalImg')
 var modal = document.getElementById('modal')
-
+var btnClose = document.getElementById('btnClose')
 
 for (let i = 0; i < img.length; i++) {
     img[i].addEventListener('click', function () {
+        // posicionar os itens do modal primeiro
+        document.body.style.overflow = 'hidden'
+        document.body.style.background = 'rgba(0, 0, 0, 0.5)'
+
+        /*
+        modal.style.position = 'absolute'
+        modal.style.top = '0'
+        modal.style.left = 0
+        modal.style.width = document.body.clientWidth + 'px'
+        modal.style.height = document.body.clientHeight + 'px'
+
+        modalImg.style.position = 'fixed'
+
+        modalImg.style.width = document.getElementsByTagName('main')[0].clientWidth + 'px'
+        */
+
+        // depois mostrar a img
         imgUrl = window.getComputedStyle(img[i]).backgroundImage
         modalImg.style.backgroundImage = imgUrl
 
         modal.style.transition = '.2s'
         modal.style.visibility = 'visible'
-        modal.style.opacity = '1'
+        modal.style.opacity = '1'        
 
         modalImg.style.transition = '.5s'
         modalImg.style.opacity = '1'
         modalImg.style.transform = 'scale(1)'
+
+        modal.style.zIndex = '3' // para o menu burguer nao ficar na frente
         
     })
 }
+
 modal.addEventListener('click', function () {
+    document.body.style.overflow = 'visible'
+    document.body.style.background = 'url(img/tile_background.png)'
+
     modalImg.style.transition = '.5s'
     modalImg.style.transform = 'scale(0)'
     modalImg.style.opacity = '0'
@@ -230,38 +253,6 @@ modal.addEventListener('click', function () {
     modal.style.transition = '.2s'
     modal.style.opacity = '0'
     modal.style.visibility = 'hidden'
-
+    modal.style.zIndex = '1'
+    
 })
-
-/*
-function ampliaImg() {
-    var divModal = document.createElement('div')
-    divModal.setAttribute('id', 'modal')
-    document.body.appendChild(divModal)
-
-    /*
-    var divModalContent = document.createElement('div')
-    divModalContent.setAttribute('id', 'modalContent')
-    divModal.appendChild(divModalContent)
-
-    
-    var img = document.createElement('img')
-    img.setAttribute('src', 'img/floresta.jpg')
-    img.setAttribute('id', 'modalImg')
-    divModalContent.appendChild(img)
-    
-
-    var span = document.createElement('span')
-    span.setAttribute('id', 'btnClose')
-    divModalContent.appendChild(span)
-    */
-   /*
-    //document.body.style.overflow = 'hidden'
-    //aqui para remover quando clicar na tela fora da img
-    divModal.addEventListener('click', function () {
-        divModal.remove()
-        //document.body.style.overflow = 'visible'
-
-    })
-}
-*/

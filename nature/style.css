@@ -25,10 +25,12 @@ body{
     background-position: center center;
     color: var(--corFonte);
     font-family: 'Nunito', sans-serif;
-    margin: auto;
-    max-width: 1000px;
+    
 }
-
+header, main, footer{
+    max-width: 1000px;
+    margin: 0 auto;
+}
 h1, h2, footer{
     text-align: center;
     margin: 10px;    
@@ -268,13 +270,13 @@ section{
 /* css para o modal (ampliar a img) -----------------------------*/
 
 #modal{
+    
+    backdrop-filter: blur(15px) grayscale(50%);
+    position: fixed;
     width: 100vw;
     height: 100vh;
-    background-color: rgba(0, 0, 0, .7);
-    backdrop-filter: blur(2px);
-    position: fixed;
-    z-index: 1;
     visibility: hidden;
+    z-index: 1;
     opacity: 0;
 }
 #modalContent{
@@ -291,7 +293,18 @@ section{
     box-shadow: var(--shadowImg);
     border-radius: 10px;
     transform: scale(0);
-    
+}
+#btnClose{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 5px 15px;
+    font-size: 25px;    
+    transition: all ease-out .4s;
+    cursor: pointer;
+    background: black;
+    color: white;
+    border-radius: 100%;
 }
 
 
