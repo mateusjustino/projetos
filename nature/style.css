@@ -267,16 +267,33 @@ section{
 
 /* css para o modal (ampliar a img) -----------------------------*/
 
-.modal{
+#modal{
     width: 100vw;
     height: 100vh;
     background-color: rgba(0, 0, 0, .7);
+    backdrop-filter: blur(2px);
     position: fixed;
-    visibility: hidden;
     z-index: 1;
+    visibility: hidden;
     opacity: 0;
-    transition: visibility 0.8s linear, opacity 0.5s linear;
 }
+#modalContent{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+#modalImg{
+    width: 65vw;
+    height: 50vh;
+    background-size: 100% 100%;
+    border: var(--borderImg);
+    box-shadow: var(--shadowImg);
+    border-radius: 10px;
+    transform: scale(0);
+    
+}
+
 
 
 /* fim css para o modal (ampliar a img)------------------------- */

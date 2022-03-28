@@ -200,27 +200,62 @@ function fechaMenu() {
 }
 
 // ampliar uma img ----------------------
-var imgTeste = document.getElementById('imgFloresta')
-imgTeste.addEventListener('click', ampliaImg)
+var img = document.getElementsByClassName('img')
+var imgUrl = ''
+var modalImg = document.getElementById('modalImg')
+var modal = document.getElementById('modal')
 
+
+for (let i = 0; i < img.length; i++) {
+    img[i].addEventListener('click', function () {
+        imgUrl = window.getComputedStyle(img[i]).backgroundImage
+        modalImg.style.backgroundImage = imgUrl
+
+        modal.style.transition = '.2s'
+        modal.style.visibility = 'visible'
+        modal.style.opacity = '1'
+
+        modalImg.style.transition = '.5s'
+        modalImg.style.opacity = '1'
+        modalImg.style.transform = 'scale(1)'
+        
+    })
+}
+modal.addEventListener('click', function () {
+    modalImg.style.transition = '.5s'
+    modalImg.style.transform = 'scale(0)'
+    modalImg.style.opacity = '0'
+    modalImg.style.backgroundImage = ''
+
+    modal.style.transition = '.2s'
+    modal.style.opacity = '0'
+    modal.style.visibility = 'hidden'
+
+})
+
+/*
 function ampliaImg() {
     var divModal = document.createElement('div')
     divModal.setAttribute('id', 'modal')
     document.body.appendChild(divModal)
 
+    /*
     var divModalContent = document.createElement('div')
     divModalContent.setAttribute('id', 'modalContent')
     divModal.appendChild(divModalContent)
 
+    
     var img = document.createElement('img')
     img.setAttribute('src', 'img/floresta.jpg')
     img.setAttribute('id', 'modalImg')
     divModalContent.appendChild(img)
+    
 
     var span = document.createElement('span')
     span.setAttribute('id', 'btnClose')
     divModalContent.appendChild(span)
-
+    */
+   /*
     //document.body.style.overflow = 'hidden'
     //aqui para remover quando clicar na tela fora da img
     divModal.addEventListener('click', function () {
@@ -229,3 +264,4 @@ function ampliaImg() {
 
     })
 }
+*/
