@@ -210,7 +210,6 @@ for (let i = 0; i < img.length; i++) {
     img[i].addEventListener('click', function () {
         // posicionar os itens do modal primeiro
         document.body.style.overflow = 'hidden'
-        document.body.style.background = 'rgba(0, 0, 0, 0.5)'
 
         /*
         modal.style.position = 'absolute'
@@ -243,7 +242,6 @@ for (let i = 0; i < img.length; i++) {
 
 modal.addEventListener('click', function () {
     document.body.style.overflow = 'visible'
-    document.body.style.background = 'url(img/tile_background.png)'
 
     modalImg.style.transition = '.5s'
     modalImg.style.transform = 'scale(0)'

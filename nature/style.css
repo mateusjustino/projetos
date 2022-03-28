@@ -126,11 +126,15 @@ section{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    -webkit-transition:  0.3s;
+    -moz-transition:  0.3s;
+    -o-transition:  0.3s;
+    transition:  0.3s; 
 }
 
 #btnAnterior, #btnProximo{
     cursor: pointer;
-    backdrop-filter: blur(0.5px);
+    background: rgba(255, 255, 255, 0.05);
     border-radius: 20px;
     width: 50px;
     height: 80px;
@@ -169,8 +173,8 @@ section{
 }
 
 #divPosSlide{
+    background: rgba(255, 255, 255, 0.05);
     border-radius: 30px;
-    backdrop-filter: blur(0.5px);
     position: relative;
     top: 170px;
     width: 250px;
@@ -181,7 +185,7 @@ section{
     justify-content: space-around;
 }
 .posSlide{
-
+    transition: 0.3s;
     cursor: pointer;
     background: white;
     width: 15px;
@@ -270,8 +274,7 @@ section{
 /* css para o modal (ampliar a img) -----------------------------*/
 
 #modal{
-    background-color: rgba(0, 0, 0, 0.7);
-    backdrop-filter: blur(10px) grayscale(50%);
+    background-color: rgba(0, 0, 0, 0.8);
     position: fixed;
     width: 100vw;
     height: 100vh;
@@ -302,7 +305,7 @@ section{
     font-size: 25px;    
     transition: all ease-out .4s;
     cursor: pointer;
-    background: rgba(255, 255, 255, 0.8);
+    background: rgba(255, 255, 255, 0.9);
     color: black;
     border-radius: 100%;
 }
