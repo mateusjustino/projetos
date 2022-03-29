@@ -13,12 +13,12 @@
     --shadowImg: 0px 0px 5px rgba(0, 0, 0, 0.3);
     --borderImg: 5px solid rgba(255, 255, 255, 0.9);
 }
-*{
-    
+*{    
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     text-shadow: 0px 0px 1px var(--cor3);
+
 }
 html {
     scroll-behavior: smooth;
@@ -321,12 +321,12 @@ section{
 /* footer ----------------------------------*/
 footer{
     margin: 10px auto;
-    padding: 5px;
     background: rgba(144, 238, 144, 0.4);
     border-radius: 10px;
     display: grid;
     grid-template-columns: 1fr minmax(200px, 1fr) 1fr;
     align-items: center;
+    justify-content: center;
 }
 footer a{
     text-decoration: none;
@@ -338,8 +338,17 @@ footer a:hover{
 footer a:active{
     color: var(--active);
 }
+footer img{
+    margin-top: 8px;
+    border-radius: 100%;
+    width: 60px;
+    transition: .3s;
+}
+footer img:hover{
+    transform: scale(1.05);
+}
 
-#btnVoltaTopo{    
+#btnVoltaTopo{
     margin-right: 20px;
     text-align: end;
     font-size: 30px;
@@ -348,7 +357,9 @@ footer a:active{
     padding: 0px 10px;
     background-color: rgba(255, 255, 255, 0.8);
     border-radius: 100%;
+    transition: .2s;
 }
+
 /* fim footer ----------------------------------*/
 
 /* fim css para o modal (ampliar a img)------------------------- */
