@@ -20,6 +20,9 @@
     text-shadow: 0px 0px 1px var(--cor3);
 
 }
+html {
+    scroll-behavior: smooth;
+}
 body{
     background: url(img/tile_background.png);
     background-position: center center;
@@ -316,7 +319,32 @@ section{
     border-radius: 100%;
 }
 
+/* footer ----------------------------------*/
+footer{
+    margin: 20px auto;
+    padding: 5px;
+    background: rgba(172, 255, 47, 0.1);
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: 1fr minmax(600px, 1fr) 1fr;
+    align-items: center;
+}
+footer a{
+    text-decoration: none;
+    color: var(--corFonte);
+}
 
+#btnVoltaTopo{    
+    margin-right: 20px;
+    text-align: end;
+    font-size: 30px;
+}
+#btnVoltaTopo > a{
+    padding: 0px 10px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 100%;
+}
+/* fim footer ----------------------------------*/
 
 /* fim css para o modal (ampliar a img)------------------------- */
 /* responsividade para o menu -----------------------*/
