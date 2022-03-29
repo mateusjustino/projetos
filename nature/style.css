@@ -28,7 +28,6 @@ body{
     background-position: center center;
     color: var(--corFonte);
     font-family: 'Nunito', sans-serif;
-    
 }
 header, main, footer{
     max-width: 1000px;
@@ -321,9 +320,9 @@ section{
 
 /* footer ----------------------------------*/
 footer{
-    margin: 20px auto;
+    margin: 10px auto;
     padding: 5px;
-    background: rgba(201, 240, 143, 0.5);
+    background: rgba(144, 238, 144, 0.4);
     border-radius: 10px;
     display: grid;
     grid-template-columns: 1fr minmax(200px, 1fr) 1fr;
