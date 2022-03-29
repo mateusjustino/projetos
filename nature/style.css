@@ -326,7 +326,7 @@ footer{
     background: rgba(172, 255, 47, 0.1);
     border-radius: 10px;
     display: grid;
-    grid-template-columns: 1fr minmax(600px, 1fr) 1fr;
+    grid-template-columns: 1fr minmax(100px, 1fr) 1fr;
     align-items: center;
 }
 footer a{
