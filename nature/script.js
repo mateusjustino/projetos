@@ -1,24 +1,4 @@
 
-// modo noturno ----------------------------------------
-
-var varModoNoturno = false
-
-var modoNoturnoBtn = document.getElementById('modoNoturno')
-modoNoturnoBtn.addEventListener('click', funcModoNoturno)
-
-function funcModoNoturno() {
-    if (varModoNoturno == false) {
-        document.body.style.transition = '1s'
-        document.body.style.background = 'black'
-        varModoNoturno = true
-    }
-    else if (varModoNoturno == true){
-        document.body.style.transition = '1s'
-        document.body.style.background = 'white'
-        varModoNoturno = false
-    }
-}
-
 //slide ------------------------------------------------------
 var imgs = []
 var imgAtual = 0
@@ -132,7 +112,6 @@ bar3.style.transition = '0.5s'
 nav.addEventListener('click', function () {
     if (menuAberto == true) {
         fechaMenu()
-        console.log('foi')
     }
 })
 var burguer = document.getElementById('burguer')
@@ -251,6 +230,7 @@ modal.addEventListener('click', function () {
     modal.style.transition = '.2s'
     modal.style.opacity = '0'
     modal.style.visibility = 'hidden'
+    
     modal.style.zIndex = '1'
     
 })
