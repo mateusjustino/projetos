@@ -338,17 +338,8 @@ footer a:hover{
 footer a:active{
     color: var(--active);
 }
-footer img{
-    margin-top: 8px;
-    border-radius: 100%;
-    width: 60px;
-    transition: .3s;
-}
-footer img:hover{
-    transform: scale(1.05);
-}
-
 #btnVoltaTopo{
+    margin: 5px;
     margin-right: 20px;
     text-align: end;
     font-size: 30px;
@@ -358,6 +349,14 @@ footer img:hover{
     background-color: rgba(255, 255, 255, 0.8);
     border-radius: 100%;
     transition: .2s;
+}
+footer img{
+    height: 37px;
+    margin-top: 7px;
+    transition: .3s;
+}
+footer img:hover{
+    transform: scale(1.06);
 }
 
 /* fim footer ----------------------------------*/
