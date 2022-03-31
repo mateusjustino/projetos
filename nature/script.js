@@ -1,96 +1,100 @@
 
 //slide ------------------------------------------------------
-var imgs = new Array()
-var imgAtual = 1
-var tmpTrocaSlide = 0
-var tmpTrocaSlideProx = 150
-var imgSlide = document.getElementById('imgSlide')
+const slide = document.body.querySelector('#imgSlide')// para verificar se tem o slide na page
+if (slide != null) {    
+    var imgs = new Array()
+    var imgAtual = 1
+    var tmpTrocaSlide = 0
+    var tmpTrocaSlideProx = 150
+    var imgSlide = document.getElementById('imgSlide')
 
-// botoes do slide
-document.getElementById('btnProximo').addEventListener('click', imgProxima)
-document.getElementById('btnAnterior').addEventListener('click', imgAnterior)
-//bolinha das posicoes do slide
-document.getElementById('posSlide1').addEventListener('click', function () {
-    imgAtual = 0
-    trocaImg()
-    tmpTrocaSlide = 0
-})
-document.getElementById('posSlide2').addEventListener('click', function () {
-    imgAtual = 1
-    trocaImg()
-    tmpTrocaSlide = 0
-})
-document.getElementById('posSlide3').addEventListener('click', function () {
-    imgAtual = 2
-    trocaImg()
-    tmpTrocaSlide = 0
-})
-document.getElementById('posSlide4').addEventListener('click', function () {
-    imgAtual = 3
-    trocaImg()
-    tmpTrocaSlide = 0
-})
-document.getElementById('posSlide5').addEventListener('click', function () {
-    imgAtual = 4
-    trocaImg()
-    tmpTrocaSlide = 0
-})
-
-preCarregamento()
-trocaImg() // para já iniciar a pagina com uma img
-sliderAutomatico() // para executar o slide automatico
-
-function preCarregamento() { //para já carregar as imagens ao iniciar a página, para evitar possivel loading
-    for (let i = 1; i < 6; i++) {
-        imgs[i] = new Image()
-        imgs[i].src = "img/"+ i +".jpg"        
-    }
-}
-
-function carregarImg(img) { //func para carregar a img
-    imgSlide.style.transition = 'background-image 0.5s linear'
-    imgSlide.style.backgroundImage = "url('"+ imgs[img].src +"')"
-
-    for (let i = 1; i < 6; i++) {        
-        var bolinha = document.getElementById('posSlide' + i)
-        bolinha.style.backgroundColor = 'white'
-    }
-
-    var bolinha = document.getElementById('posSlide' + img)   
-    bolinha.style.transition = '0.3s' 
-    bolinha.style.backgroundColor = 'rgb(160, 180, 160)'
-}
-function trocaImg() { // func para trocar a img
-    imgAtual++
-    if (imgAtual >= 6) {
-        imgAtual = 1
-        carregarImg(imgAtual)
-    }
-    else if (imgAtual < 1){
-        imgAtual = 5
-        carregarImg(imgAtual)
-    }
-    else{
-        carregarImg(imgAtual)        
-    }
-}
-function sliderAutomatico() {
-    tmpTrocaSlide++
-    if (tmpTrocaSlide >= tmpTrocaSlideProx) {
-        tmpTrocaSlide = 0
+    // botoes do slide
+    document.getElementById('btnProximo').addEventListener('click', imgProxima)
+    document.getElementById('btnAnterior').addEventListener('click', imgAnterior)
+    //bolinha das posicoes do slide
+    document.getElementById('posSlide1').addEventListener('click', function () {
+        imgAtual = 0
         trocaImg()
+        tmpTrocaSlide = 0
+    })
+    document.getElementById('posSlide2').addEventListener('click', function () {
+        imgAtual = 1
+        trocaImg()
+        tmpTrocaSlide = 0
+    })
+    document.getElementById('posSlide3').addEventListener('click', function () {
+        imgAtual = 2
+        trocaImg()
+        tmpTrocaSlide = 0
+    })
+    document.getElementById('posSlide4').addEventListener('click', function () {
+        imgAtual = 3
+        trocaImg()
+        tmpTrocaSlide = 0
+    })
+    document.getElementById('posSlide5').addEventListener('click', function () {
+        imgAtual = 4
+        trocaImg()
+        tmpTrocaSlide = 0
+    })
+
+    preCarregamento()
+    trocaImg() // para já iniciar a pagina com uma img
+    sliderAutomatico() // para executar o slide automatico
+
+    function preCarregamento() { //para já carregar as imagens ao iniciar a página, para evitar possivel loading
+        for (let i = 1; i < 6; i++) {
+            imgs[i] = new Image()
+            imgs[i].src = "img/"+ i +".jpg"        
+        }
     }
-    window.requestAnimationFrame(sliderAutomatico)
+
+    function carregarImg(img) { //func para carregar a img
+        imgSlide.style.transition = 'background-image 0.5s linear'
+        imgSlide.style.backgroundImage = "url('"+ imgs[img].src +"')"
+
+        for (let i = 1; i < 6; i++) {        
+            var bolinha = document.getElementById('posSlide' + i)
+            bolinha.style.backgroundColor = 'white'
+        }
+
+        var bolinha = document.getElementById('posSlide' + img)   
+        bolinha.style.transition = '0.3s' 
+        bolinha.style.backgroundColor = 'rgb(160, 180, 160)'
+    }
+    function trocaImg() { // func para trocar a img
+        imgAtual++
+        if (imgAtual >= 6) {
+            imgAtual = 1
+            carregarImg(imgAtual)
+        }
+        else if (imgAtual < 1){
+            imgAtual = 5
+            carregarImg(imgAtual)
+        }
+        else{
+            carregarImg(imgAtual)        
+        }
+    }
+    function sliderAutomatico() {
+        tmpTrocaSlide++
+        if (tmpTrocaSlide >= tmpTrocaSlideProx) {
+            tmpTrocaSlide = 0
+            trocaImg()
+        }
+        window.requestAnimationFrame(sliderAutomatico)
+    }
+    function imgProxima() {
+        trocaImg()
+        tmpTrocaSlide = 0
+    }
+    function imgAnterior() {
+        imgAtual -= 2
+        trocaImg()
+        tmpTrocaSlide = 0
+    }
 }
-function imgProxima() {
-    trocaImg()
-    tmpTrocaSlide = 0
-}
-function imgAnterior() {
-    imgAtual -= 2
-    trocaImg()
-    tmpTrocaSlide = 0
-}
+
 
 // menu hamburguer ------------------------------
 
@@ -179,6 +183,7 @@ function fechaMenu() {
 }
 
 // ampliar uma img ----------------------
+
 var img = document.getElementsByClassName('img')
 var imgUrl = ''
 var modalImg = document.getElementById('modalImg')

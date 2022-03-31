@@ -1,5 +1,41 @@
+*{
+}
 h1{
     margin: 10px auto;
     text-align: center;
     max-width: 500px;
+    margin-bottom: 40px;
+}
+h2{
+    display: block;
+}
+section{
+    flex-direction: column;
+}
+.galeria{
+    margin: 0 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.img{
+    width: 250px;
+    height: 150px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    text-align: center;
+
+    cursor: pointer;
+    margin: 20px;
+    background-position: center center;
+    background-size: 100% 100%;
+    border-radius: 10px;
+    border: var(--borderImg);
+    box-shadow: var(--shadowImg);
+    overflow: hidden;
+    transition: 0.1s;
 }
