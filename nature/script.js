@@ -1,10 +1,10 @@
 
 //slide ------------------------------------------------------
-var imgs = []
-var imgAtual = 0
+var imgs = new Array()
+var imgAtual = 1
 var tmpTrocaSlide = 0
 var tmpTrocaSlideProx = 150
-var divSlide = document.getElementById('slide')
+var imgSlide = document.getElementById('imgSlide')
 
 // botoes do slide
 document.getElementById('btnProximo').addEventListener('click', imgProxima)
@@ -43,13 +43,13 @@ sliderAutomatico() // para executar o slide automatico
 function preCarregamento() { //para já carregar as imagens ao iniciar a página, para evitar possivel loading
     for (let i = 1; i < 6; i++) {
         imgs[i] = new Image()
-        imgs[i] = "img/"+ i +".jpg"        
+        imgs[i].src = "img/"+ i +".jpg"        
     }
 }
 
 function carregarImg(img) { //func para carregar a img
-    divSlide.style.transition = 'background-image 0.3s linear'
-    divSlide.style.backgroundImage = "url('"+imgs[imgAtual]+"')"
+    imgSlide.style.transition = 'background-image 0.5s linear'
+    imgSlide.style.backgroundImage = "url('"+ imgs[img].src +"')"
 
     for (let i = 1; i < 6; i++) {        
         var bolinha = document.getElementById('posSlide' + i)
