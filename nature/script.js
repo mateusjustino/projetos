@@ -239,3 +239,10 @@ modal.addEventListener('click', function () {
     modal.style.zIndex = '1'
     
 })
+// fim ampliar uma img ----------------------
+
+//só pra fixar o rodapé na page sobre
+const rodape = document.body.querySelector('#sobre')
+if (rodape != null) {
+    
+}

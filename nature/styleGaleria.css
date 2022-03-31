@@ -1,4 +1,5 @@
 *{
+
 }
 h1{
     margin: 10px auto;
@@ -11,6 +12,7 @@ h2{
 }
 section{
     flex-direction: column;
+    padding-bottom: 20px;
 }
 .galeria{
     margin: 0 10px;
@@ -38,4 +40,28 @@ section{
     box-shadow: var(--shadowImg);
     overflow: hidden;
     transition: 0.1s;
+}
+
+@media (max-width: 650px){
+
+    .img{
+        width: 220px;
+        margin: 10px;
+    }
+}
+@media (max-width: 540px){
+
+    .img{
+        width: 200px;
+        height: 130px;
+        margin: 5px;
+    }
+}
+@media (max-width: 470px){
+
+    .img{
+        width: 250px;
+        height: 130px;
+        margin: 5px;
+    }
 }
