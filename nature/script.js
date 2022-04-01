@@ -244,5 +244,15 @@ modal.addEventListener('click', function () {
 //só pra fixar o rodapé na page sobre
 const rodape = document.body.querySelector('#sobre')
 if (rodape != null) {
+    document.body.style.height = '100vh'
+    document.body.style.display = 'flex'
+    document.body.style.flexDirection = 'column'
+    document.body.style.justifyContent = 'space-between'
+    var header = document.getElementsByTagName('header')[0]
+    header.style.width = '100%'
+    header.style.justifyContent = 'space-between'
+    var footer = document.getElementsByTagName('footer')[0]
+    footer.style.position = 'relative'
+    footer.style.bottom = '0px'
     
 }
