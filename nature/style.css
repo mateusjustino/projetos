@@ -71,12 +71,14 @@ nav > ul > li > a:active{
 
 
 #logo{
-    background-image: url(img/eco-5465473-removebg-preview.png);
+    background-image: url(img/lotus-4776450.png);
     background-size: 100%;
     background-repeat: no-repeat;
     min-width: 100px;
     height: 100px;
     margin: 10px;
+    margin-top: 20px;
+    transform: scale(0.7);
 }
 
 #burguer{
