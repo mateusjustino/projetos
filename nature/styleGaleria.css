@@ -41,7 +41,104 @@ section{
     overflow: hidden;
     transition: 0.1s;
 }
+/* fotos ----------------------------------*/
+#florestas .foto1{
+    background-image: url(img/floresta/1.jpg);
+}
+#florestas .foto2{
+    background-image: url(img/floresta/2.jpg);
+}
+#florestas .foto3{
+    background-image: url(img/floresta/3.jpg);
+}
+#florestas .foto4{
+    background-image: url(img/floresta/4.jpg);
+}
+#florestas .foto5{
+    background-image: url(img/floresta/5.jpg);
+}
+#florestas .foto6{
+    background-image: url(img/floresta/6.jpg);
+}
 
+#rios .foto1{
+    background-image: url(img/rio/1.jpg);
+}
+#rios .foto2{
+    background-image: url(img/rio/2.jpg);
+}
+#rios .foto3{
+    background-image: url(img/rio/3.jpg);
+}
+#rios .foto4{
+    background-image: url(img/rio/4.jpg);
+}
+#rios .foto5{
+    background-image: url(img/rio/5.jpg);
+}
+#rios .foto6{
+    background-image: url(img/rio/6.jpg);
+}
+
+#montanhas .foto1{
+    background-image: url(img/montanha/1.jpg);
+}
+#montanhas .foto2{
+    background-image: url(img/montanha/2.jpg);
+}
+#montanhas .foto3{
+    background-image: url(img/montanha/3.jpg);
+}
+#montanhas .foto4{
+    background-image: url(img/montanha/4.jpg);
+}
+#montanhas .foto5{
+    background-image: url(img/montanha/5.jpg);
+}
+#montanhas .foto6{
+    background-image: url(img/montanha/6.jpg);
+}
+
+#ceu .foto1{
+    background-image: url(img/ceu/1.jpg);
+}
+#ceu .foto2{
+    background-image: url(img/ceu/2.jpg);
+}
+#ceu .foto3{
+    background-image: url(img/ceu/3.jpg);
+}
+#ceu .foto4{
+    background-image: url(img/ceu/4.jpg);
+}
+#ceu .foto5{
+    background-image: url(img/ceu/5.jpg);
+}
+#ceu .foto6{
+    background-image: url(img/ceu/6.jpg);
+}
+
+#animais .foto1{
+    background-image: url(img/animal/1.jpg);
+}
+#animais .foto2{
+    background-image: url(img/animal/2.jpg);
+}
+#animais .foto3{
+    background-image: url(img/animal/3.jpg);
+}
+#animais .foto4{
+    background-image: url(img/animal/4.jpg);
+}
+#animais .foto5{
+    background-image: url(img/animal/5.jpg);
+}
+#animais .foto6{
+    background-image: url(img/animal/6.jpg);
+}
+
+
+/* fim fotos ----------------------------------*/
 @media (max-width: 650px){
 
     .img{

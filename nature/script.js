@@ -45,7 +45,7 @@ if (slide != null) {
     function preCarregamento() { //para já carregar as imagens ao iniciar a página, para evitar possivel loading
         for (let i = 1; i < 6; i++) {
             imgs[i] = new Image()
-            imgs[i].src = "img/"+ i +".jpg"        
+            imgs[i].src = "img/slide/"+ i +".jpg"        
         }
     }
 
@@ -195,17 +195,6 @@ for (let i = 0; i < img.length; i++) {
         // posicionar os itens do modal primeiro
         document.body.style.overflow = 'hidden'
 
-        /*
-        modal.style.position = 'absolute'
-        modal.style.top = '0'
-        modal.style.left = 0
-        modal.style.width = document.body.clientWidth + 'px'
-        modal.style.height = document.body.clientHeight + 'px'
-
-        modalImg.style.position = 'fixed'
-
-        modalImg.style.width = document.getElementsByTagName('main')[0].clientWidth + 'px'
-        */
 
         // depois mostrar a img
         imgUrl = window.getComputedStyle(img[i]).backgroundImage

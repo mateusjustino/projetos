@@ -264,31 +264,31 @@ main > section > div > p{
     background-color: rgba(0, 128, 0, 0.1);
 }
 #florestas > .img{
-    background-image: url(img/floresta.jpg);
+    background-image: url(img/floresta/inicial.jpg);
 }
 #rios{
     background-color: rgba(0, 0, 255, 0.1);
 }
 #rios > .img{
-    background-image: url(img/rio.jpg);
+    background-image: url(img/rio/inicial.jpg);
 }
 #montanhas{
     background-color: rgba(165, 42, 42, 0.1);
 }
 #montanhas > .img{
-    background-image: url(img/montanha.jpg);
+    background-image: url(img/montanha/inicial.jpg);
 }
 #ceu{
     background-color: rgba(135, 207, 235, 0.1);
 }
 #ceu > .img{
-    background-image: url(img/ceu.jpg);
+    background-image: url(img/ceu/inicial.jpg);
 }
 #animais{
     background-color: rgba(128, 128, 128, 0.1);
 }
 #animais > .img{
-    background-image: url(img/animal.jpg);
+    background-image: url(img/animal/inicial.jpg);
 }
 /* fim sessoes da pagina -----------------------*/
 
@@ -335,7 +335,7 @@ main > section > div > p{
 footer{
     width: 96%;
     max-width: 980px;
-    margin: 10px auto;
+    margin: 30px auto;
     background: rgba(144, 238, 144, 0.4);
     border-radius: 10px;
     display: grid;
@@ -368,6 +368,7 @@ footer a:active{
 footer img{
     height: 37px;
     margin-top: 7px;
+    filter: drop-shadow(0px 0px 5px rgba(0, 128, 0, 0.3));
     transition: .3s;
 }
 footer img:hover{
